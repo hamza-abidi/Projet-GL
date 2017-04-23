@@ -1,0 +1,45 @@
+#include "../include/termcolor.h"
+#include "../include/Colors.h"
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+using namespace termcolor;
+
+Colors::Colors(){}
+void Colors::activerTermcolor(char c){
+  switch(toupper(c)){
+    case 'R' : cout << on_red;
+              break;
+    case 'B' : cout << on_blue;
+              break;
+    case 'V' : cout << on_green;
+              break;
+    case 'J' : cout << on_yellow;
+              break;
+    case 'M' : cout << on_magenta;
+              break;
+    case 'C' : cout << on_cyan;
+              break;
+    case 'N' : cout << on_grey;
+              break;
+    default :std::cout << "cette couleur n'existe pas parmis les choix disponibles" << '\n';
+  }
+}
+
+
+void Colors::desactiverTermcolor(){
+  cout<<termcolor::reset;
+}
+void Colors::displayColor(char c){
+  activerTermcolor(c);
+  std::cout << "   ";
+  desactiverTermcolor();
+}
+
+void Colors::displayColor(string s ,char c){
+  activerTermcolor(c);
+  std::cout << s;
+  desactiverTermcolor();
+}

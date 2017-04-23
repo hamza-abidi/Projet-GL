@@ -1,0 +1,17 @@
+\hypertarget{_color_8cpp}{}\section{Référence du fichier src/\+Color.cpp}
+\label{_color_8cpp}\index{src/\+Color.\+cpp@{src/\+Color.\+cpp}}
+{\ttfamily \#include \char`\"{}../include/termcolor.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+Graphe des dépendances par inclusion de Color.\+cpp\+:
+% FIG 0
+
+
+\subsection{Description détaillée}
+\begin{DoxyAuthor}{Auteur}
+Abidi Hamza 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+20 Avril 2017
+\end{DoxyDate}
+La classe \hyperlink{class_color}{Color} se base sur une bibliothèque qui nous permet de colorer des chaine de caractéres données et/ou leurs arrières-\/plan, \hyperlink{class_color}{Color} va nous permettre d\textquotesingle{}afficher des couleurs à partir d\textquotesingle{}un caractére donnée. \mbox{[}R \+: R\+O\+U\+GE , B \+: B\+L\+EU , V \+: V\+E\+RT , J \+: J\+A\+U\+NE \mbox{]} 

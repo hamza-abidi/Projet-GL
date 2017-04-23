@@ -1,0 +1,24 @@
+\hypertarget{_manage_file_8cpp}{}\section{Référence du fichier src/\+Manage\+File.cpp}
+\label{_manage_file_8cpp}\index{src/\+Manage\+File.\+cpp@{src/\+Manage\+File.\+cpp}}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include \char`\"{}../include/\+Manage\+File.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de Manage\+File.\+cpp\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries map\+\_\+directory}~\char`\"{}../maps/\char`\"{}\hypertarget{_manage_file_8cpp_ac1a54bf5b405091b796e40b5fe91d933}{}\label{_manage_file_8cpp_ac1a54bf5b405091b796e40b5fe91d933}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+\begin{DoxyAuthor}{Auteur}
+Abidi Hamza 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+20 Avril 2017
+\end{DoxyDate}
+La classe \hyperlink{class_manage_file}{Manage\+File} va s\textquotesingle{}occuper de l\textquotesingle{}ouverture , la fermeture , l\textquotesingle{}ecriture dans un fichier , la lecture à partir d\textquotesingle{}un fichier ..., elle gère l\textquotesingle{}affichage des erreurs d\textquotesingle{}ouverture des fichiers 
