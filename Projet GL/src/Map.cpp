@@ -1,17 +1,19 @@
-#define window_width 40
+#define window_width 121
 #define window_height 21
-
+#define map_width 40
 
 #include <string>
 #include <iostream>
 #include <time.h>
 #include "../include/Map.h"
 #include "../include/ManageFile.h"
+#include "../include/ClearSrc.h"
 
 using namespace std ;
 
 Map::Map(string nameMap) : Colors(){
   map = nameMap ;
+  beginIndex = 0;
   matrixMap = new Case*[window_height];
   ManageFile file(nameMap , "r");
   char c ;
@@ -26,7 +28,23 @@ Map::Map(string nameMap) : Colors(){
 }
 
 bool Map::modify(Cord cord , char move){
-  if(cord.y < window_width && cord.x < window_height && matrixMap[cord.x][cord.y].c != 'e' && matrixMap[cord.x][cord.y].c != 'a' ){
+  if((cord.y - beginIndex) == map_width){
+    beginIndex = cord.y ;
+    clear_screen();
+    cout << "\033[0;0H";
+    display(cord);
+    cout << "\033["<<cord.x+1<<";"<<0<<"H";
+    return true;
+  }
+  else if(cord.y < window_width && cord.x < window_height && cord.y >= 0 && cord.x >= 0 && matrixMap[cord.x][cord.y].c != 'e' && matrixMap[cord.x][cord.y].c != 'a' ){
+    if(cord.y < beginIndex && beginIndex != 0){
+      beginIndex -= map_width ;
+      clear_screen();
+      cout << "\033[0;0H";
+      display(cord);
+      cout << "\033["<<cord.x+1<<";"<<map_width<<"H";
+      return true;
+    }
     switch (move) {
       case 'A': cout << "\033[A" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[B" ;break;
       case 'B': cout << "\033[B" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[A" ;break;
@@ -40,7 +58,6 @@ bool Map::modify(Cord cord , char move){
       case 'C': cout << "\033[C" ;break;
       case 'D': cout << "\033[D" ;break;
     }
-    //cout << move ;
     return true;
   }
   else
@@ -49,7 +66,7 @@ bool Map::modify(Cord cord , char move){
 
 void Map::display(Cord cord){
 	for (int  i = 0 ; i < window_height ; i++){
-		for(int j = 0 ; j < window_width ; j++){
+		for(int j = beginIndex ; j < beginIndex+map_width; j++){
   			switch(matrixMap[i][j].c){
   				case 'h' : {
             if(cord.x != i || cord.y != j)

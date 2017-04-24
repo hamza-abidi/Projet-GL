@@ -18,10 +18,10 @@ Gameplay::Gameplay(string nameMap) : Input() {
 void Gameplay::play() {
 	char move = 'A';
 	map->display(player);
-	printf("\033[11;0H");
+	cout << "\033["<<player.x+1<<";"<<player.y<<"H";
 	while(true) {
 		char c = keyboard();
-		if(c == UP && player.x > 0 ) {
+		if(c == UP) {
 			move = 'A';
 			player.x -= 1;
 			if(!map->modify(player, move)) player.x += 1;
@@ -36,7 +36,7 @@ void Gameplay::play() {
 			player.y += 1;
 			if(!map->modify(player, move)) player.y -= 1;
 		}
-		else if(c == LEFT && player.y > 0) {
+		else if(c == LEFT) {
 			move = 'D';
 			player.y -= 1;
 			if(!map->modify(player, move)) player.y += 1;

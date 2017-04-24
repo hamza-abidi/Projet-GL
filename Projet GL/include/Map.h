@@ -27,7 +27,7 @@ class Map : public Colors  {
 
   private:
     string map;
-
+    int beginIndex;
     typedef struct Case{
       char c;
       bool monster ;
