@@ -1,7 +1,7 @@
-#include "../include/Map.h"
+#include "../include/Gameplay.h"
 
 int main(){
-	Map map("map1");
-	map.display();
+	Gameplay gameplay("../maps/map1");
+	gameplay.play();
 	return 0;
 }

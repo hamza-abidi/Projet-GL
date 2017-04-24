@@ -1,5 +1,5 @@
-struct Coord
+typedef struct Cord
 {
     int x;
     int y;
-}Coord;
+}Cord;

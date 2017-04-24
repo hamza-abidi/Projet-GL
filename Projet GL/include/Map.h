@@ -20,16 +20,17 @@ class Map : public Colors  {
     Map(string map);
 
     /// \brief modifier la map
-    bool modify(Cord);
+    bool modify(Cord,char);
 
     /// \afficher la map
-    void display();
+    void display(Cord);
+
   private:
     string map;
 
-    struct Case{
+    typedef struct Case{
       char c;
-      bool monter ;
+      bool monster ;
     }Case ;
 
     Case** matrixMap ;

@@ -1,41 +1,45 @@
 #include "../include/Gameplay.h"
+#include "../include/Input.h"
+#include <iostream>
 
 Gameplay::Gameplay() : Input() {
-	map = new Map("map1");
-	player.x = 0;
+	map = new Map("../maps/map1");
+	player.x = 10;
 	player.y = 0;
 }
 
 Gameplay::Gameplay(string nameMap) : Input() {
 	map = new Map(nameMap);
-	player.x = 0;
+	player.x = 10;
 	player.y = 0;
 }
 
 
-Gameplay::play() {
-	string move = "\033[XA";
-	map.display(player);
+void Gameplay::play() {
+	char move = 'A';
+	map->display(player);
+	printf("\033[11;0H");
 	while(true) {
-		keyboard();
-		if(c == UP) {
-			move[6] = 'A';
+		char c = keyboard();
+		if(c == UP && player.x > 0 ) {
+			move = 'A';
 			player.x -= 1;
-			if(!map.modify(player, move) player.x += 1;
+			if(!map->modify(player, move)) player.x += 1;
 		}
 		else if(c == DOWN) {
-			move[6] = 'B';
+			move = 'B';
 			player.x += 1;
-			if(!map.modify(player, move) player.x -= 1;
+			if(!map->modify(player, move)) player.x -= 1;
 		}
 		else if(c == RIGHT) {
-			move[6] = 'C';
+			move = 'C';
 			player.y += 1;
-			if(!map.modify(player, move) player.y -= 1;
+			if(!map->modify(player, move)) player.y -= 1;
 		}
-		else if(c == LEFT) {
-			move[6] = 'D';
+		else if(c == LEFT && player.y > 0) {
+			move = 'D';
 			player.y -= 1;
-			if(!map.modify(player, move) player.y += 1;
+			if(!map->modify(player, move)) player.y += 1;
 		}
 	}
+}

@@ -2,16 +2,11 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#define UP 'z'
-#define RIGHT 'd'
-#define DOWN 's'
-#define LEFT 'q'
-#define ESC 27;
 
 Input::Input() {
 	old_tio = new termios;
 	tcgetattr(STDIN_FILENO, old_tio);
-	
+
 	struct termios new_tio;
 	new_tio = *old_tio;
 	new_tio.c_lflag &=(~ICANON & ~ECHO);
