@@ -7,6 +7,7 @@
 #include <time.h>
 #include "../include/Map.h"
 #include "../include/ManageFile.h"
+#include "../include/Cord.h"
 
 using namespace std ;
 

@@ -8,7 +8,8 @@
 ///
 
 #include <string>
-#include "../include/Colors.h"
+#include "Colors.h"
+#include "Cord.h"
 using namespace std ;
 
 /// \class Map
@@ -30,6 +31,6 @@ class Map : public Colors  {
       char c;
       bool monter ;
     }Case ;
-    
+
     Case** matrixMap ;
 };
