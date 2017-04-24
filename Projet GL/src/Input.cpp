@@ -1,4 +1,4 @@
-#include "input.h"
+#include "../include/Input.h"
 #include <stdio.h>
 #include <unistd.h>
 
