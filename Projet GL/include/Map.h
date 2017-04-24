@@ -11,7 +11,7 @@
 #include "../include/Colors.h"
 using namespace std ;
 
-/// \class Map 
+/// \class Map
 /// \bried La classe Map herite la classe Colors
 class Map : public Colors  {
   public :
@@ -19,11 +19,17 @@ class Map : public Colors  {
     Map(string map);
 
     /// \brief modifier la map
-    bool modify();
+    bool modify(Cord);
 
     /// \afficher la map
     void display();
   private:
     string map;
-    char** matrixMap ;
+
+    struct Case{
+      char c;
+      bool monter ;
+    }Case ;
+    
+    Case** matrixMap ;
 };
