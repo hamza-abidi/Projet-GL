@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_map_8h" kind="file" language="C++">
+    <compoundname>Map.h</compoundname>
+    <includes local="no">string</includes>
+    <includes refid="_colors_8h" local="yes">Colors.h</includes>
+    <includes refid="_cord_8h" local="yes">Cord.h</includes>
+    <includedby refid="_gameplay_8h" local="yes">/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h</includedby>
+    <includedby refid="_map_8cpp" local="yes">/home/hamza/Bureau/Projet-GL/Projet GL/src/Map.cpp</includedby>
+    <incdepgraph>
+      <node id="54">
+        <label>Cord.h</label>
+        <link refid="_cord_8h_source"/>
+      </node>
+      <node id="52">
+        <label>string</label>
+      </node>
+      <node id="51">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h</label>
+        <link refid="Map.h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>Colors.h</label>
+        <link refid="_colors_8h_source"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="56">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h</label>
+        <link refid="_gameplay_8h_source"/>
+      </node>
+      <node id="57">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/src/Map.cpp</label>
+        <link refid="_map_8cpp"/>
+      </node>
+      <node id="55">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h</label>
+        <link refid="Map.h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_map" prot="public">Map</innerclass>
+    <innerclass refid="struct_map_1_1_case" prot="private">Map::Case</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Colors.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Cord.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref><sp/>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_map" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_map" kindref="compound">Map</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_colors" kindref="compound">Colors</ref><sp/><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map" kindref="compound">Map</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>map);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>modify(<ref refid="struct_cord" kindref="compound">Cord</ref>,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>display(<ref refid="struct_cord" kindref="compound">Cord</ref>);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>map;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>beginIndex;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Case{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>monster<sp/>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}Case<sp/>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>Case**<sp/>matrixMap<sp/>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h"/>
+  </compounddef>
+</doxygen>

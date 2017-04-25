@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_map" kind="class" language="C++" prot="public">
+    <compoundname>Map</compoundname>
+    <basecompoundref refid="class_colors" prot="public" virt="non-virtual">Colors</basecompoundref>
+    <includes refid="_map_8h" local="no">Map.h</includes>
+    <innerclass refid="struct_map_1_1_case" prot="private">Map::Case</innerclass>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="class_map_1a29d30032d9a86da8f15596f3db0f70cf" prot="private" static="no">
+        <type>struct Map::Case</type>
+        <definition>typedef struct Map::Case Map::Case</definition>
+        <argsstring></argsstring>
+        <name>Case</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" line="34" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_map_1a089c89fe37673642dc0d187910ce992f" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Map::map</definition>
+        <argsstring></argsstring>
+        <name>map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" line="29" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_1a3d3aad89dd0c12c8441d4a14c4cb0faf" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Map::beginIndex</definition>
+        <argsstring></argsstring>
+        <name>beginIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" line="30" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_1a4ca92712bc649b9d9040ac2a5c3cdff8" prot="private" static="no" mutable="no">
+        <type>Case **</type>
+        <definition>Case** Map::matrixMap</definition>
+        <argsstring></argsstring>
+        <name>matrixMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" line="36" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_map_1ab92768fc2db576bf956f443190b58d90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Map::Map</definition>
+        <argsstring>(string map)</argsstring>
+        <name>Map</name>
+        <param>
+          <type>string</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+<para>initialiser la map avec un le nom d&apos;un fichier texte qui contient les éléments de la map </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" line="20" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Map.cpp" bodystart="14" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_map_1a2e205067ea143008380b1c02c3753b44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Map::modify</definition>
+        <argsstring>(Cord, char)</argsstring>
+        <name>modify</name>
+        <param>
+          <type><ref refid="struct_cord" kindref="compound">Cord</ref></type>
+          <defname>cord</defname>
+        </param>
+        <param>
+          <type>char</type>
+          <defname>move</defname>
+        </param>
+        <briefdescription>
+<para>modifier la map </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" line="23" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Map.cpp" bodystart="30" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_map_1a17acb1fedf9f309444179bd94a23b86e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Map::display</definition>
+        <argsstring>(Cord)</argsstring>
+        <name>display</name>
+        <param>
+          <type><ref refid="struct_cord" kindref="compound">Cord</ref></type>
+          <defname>cord</defname>
+        </param>
+        <briefdescription>
+<para>la map </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" line="26" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Map.cpp" bodystart="67" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>La classe <ref refid="class_map" kindref="compound">Map</ref> herite la classe <ref refid="class_colors" kindref="compound">Colors</ref> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="35">
+        <label>Colors</label>
+        <link refid="class_colors"/>
+      </node>
+      <node id="34">
+        <label>Map</label>
+        <link refid="class_map"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="37">
+        <label>Colors</label>
+        <link refid="class_colors"/>
+      </node>
+      <node id="36">
+        <label>Map</label>
+        <link refid="class_map"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" line="17" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" bodystart="17" bodyend="37"/>
+    <listofallmembers>
+      <member refid="class_colors_1a22ceb07f137ca41c5772af5515337659" prot="public" virt="non-virtual"><scope>Map</scope><name>activerTermcolor</name></member>
+      <member refid="class_map_1a3d3aad89dd0c12c8441d4a14c4cb0faf" prot="private" virt="non-virtual"><scope>Map</scope><name>beginIndex</name></member>
+      <member refid="class_map_1a29d30032d9a86da8f15596f3db0f70cf" prot="private" virt="non-virtual"><scope>Map</scope><name>Case</name></member>
+      <member refid="class_colors_1a65bde56fe97e9357aa8a901c0144eab5" prot="public" virt="non-virtual"><scope>Map</scope><name>Colors</name></member>
+      <member refid="class_colors_1a7de6133476d73eaba1973184225c0641" prot="public" virt="non-virtual"><scope>Map</scope><name>desactiverTermcolor</name></member>
+      <member refid="class_map_1a17acb1fedf9f309444179bd94a23b86e" prot="public" virt="non-virtual"><scope>Map</scope><name>display</name></member>
+      <member refid="class_colors_1ad28ab0599862a1abf71d49afa2386cdd" prot="public" virt="non-virtual"><scope>Map</scope><name>displayColor</name></member>
+      <member refid="class_colors_1a8a346bc73359978fda0a1f07c436a6f2" prot="public" virt="non-virtual"><scope>Map</scope><name>displayColor</name></member>
+      <member refid="class_map_1a089c89fe37673642dc0d187910ce992f" prot="private" virt="non-virtual"><scope>Map</scope><name>map</name></member>
+      <member refid="class_map_1ab92768fc2db576bf956f443190b58d90" prot="public" virt="non-virtual"><scope>Map</scope><name>Map</name></member>
+      <member refid="class_map_1a4ca92712bc649b9d9040ac2a5c3cdff8" prot="private" virt="non-virtual"><scope>Map</scope><name>matrixMap</name></member>
+      <member refid="class_map_1a2e205067ea143008380b1c02c3753b44" prot="public" virt="non-virtual"><scope>Map</scope><name>modify</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

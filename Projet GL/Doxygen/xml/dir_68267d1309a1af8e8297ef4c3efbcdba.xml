@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>/home/hamza/Bureau/Projet-GL/Projet GL/src</compoundname>
+    <innerfile refid="_colors_8cpp">Colors.cpp</innerfile>
+    <innerfile refid="_gameplay_8cpp">Gameplay.cpp</innerfile>
+    <innerfile refid="_input_8cpp">Input.cpp</innerfile>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <innerfile refid="_manage_file_8cpp">ManageFile.cpp</innerfile>
+    <innerfile refid="_map_8cpp">Map.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/src/"/>
+  </compounddef>
+</doxygen>

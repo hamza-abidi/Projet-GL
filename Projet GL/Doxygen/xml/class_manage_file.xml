@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_manage_file" kind="class" language="C++" prot="public">
+    <compoundname>ManageFile</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_manage_file_1acb0b7319d4c4679ba80d8076711c483a" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ManageFile::nameFile</definition>
+        <argsstring></argsstring>
+        <name>nameFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="54" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_file_1a0bb29aa252f23fe9eeeaf1f0afac7711" prot="private" static="no" mutable="no">
+        <type>fstream</type>
+        <definition>fstream ManageFile::file</definition>
+        <argsstring></argsstring>
+        <name>file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="55" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_file_1aa26d29456bcaa4fd42c1972f80d14916" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ManageFile::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="56" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_manage_file_1a4518fd47f265a8fdf7390f4e3a379f48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ManageFile::ManageFile</definition>
+        <argsstring>(string, string)</argsstring>
+        <name>ManageFile</name>
+        <param>
+          <type>string</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>type</defname>
+        </param>
+        <briefdescription>
+<para>creer un fichier en passant son nom et le type d&apos;ouverture[lire : r , ecrire : w , lire et ecrire : rw] en parametre du constructeur </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="15" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/ManageFile.cpp" bodystart="8" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_file_1a9e51cbd6892b25c9db2693a45b3b426a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ManageFile::~ManageFile</definition>
+        <argsstring>()</argsstring>
+        <name>~ManageFile</name>
+        <briefdescription>
+<para>si le fichier est encore ouvert , il sera fermé lors de la destruction </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="18" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/ManageFile.cpp" bodystart="17" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_file_1abc31b87fa59ce977343415c6f31aed91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long ManageFile::getSize</definition>
+        <argsstring>()</argsstring>
+        <name>getSize</name>
+        <briefdescription>
+<para>recuperer la taille du fichier [le nombre de caractéres] </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="21" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/ManageFile.cpp" bodystart="22" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_file_1ac779e525496629ade46b98614d81e232" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ManageFile::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <briefdescription>
+<para>positionner le curseur sur la première ligne </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="24" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/ManageFile.cpp" bodystart="43" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_file_1abecdb462684f3fa27d51a8a6a1916583" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ManageFile::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <briefdescription>
+<para>positionner le curseur sur la dernière ligne </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="27" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/ManageFile.cpp" bodystart="56" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_file_1a8fc25ce213e0cdfd7cb1c317a1bc9f9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ManageFile::setPosition</definition>
+        <argsstring>(int)</argsstring>
+        <name>setPosition</name>
+        <param>
+          <type>int</type>
+          <defname>position</defname>
+        </param>
+        <briefdescription>
+<para>positionner le curseur sur une position donnée </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="30" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/ManageFile.cpp" bodystart="74" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_file_1acbb4cb80a8095b07eef0ac1e7158609e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string ManageFile::readLine</definition>
+        <argsstring>()</argsstring>
+        <name>readLine</name>
+        <briefdescription>
+<para>lire une ligne à partir du fichier </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="33" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/ManageFile.cpp" bodystart="114" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_file_1a6a381faaf02f1ae91977ac96559ade86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string *</type>
+        <definition>string * ManageFile::readWordsOfLine</definition>
+        <argsstring>(char)</argsstring>
+        <name>readWordsOfLine</name>
+        <param>
+          <type>char</type>
+          <defname>separateur</defname>
+        </param>
+        <briefdescription>
+<para>lire une ligne à partir du fichier </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="36" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/ManageFile.cpp" bodystart="131" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_file_1a1e108ebc91f037f6626b930a8bb4b48a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char ManageFile::readChar</definition>
+        <argsstring>()</argsstring>
+        <name>readChar</name>
+        <briefdescription>
+<para>lire un caractére à partir du fichier </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="39" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/ManageFile.cpp" bodystart="97" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_file_1a70b2f89264df559b4afffb9e9ca01294" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ManageFile::write</definition>
+        <argsstring>(char)</argsstring>
+        <name>write</name>
+        <param>
+          <type>char</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>écrire un caractére dans le fichier. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="42" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/ManageFile.cpp" bodystart="173" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_file_1a74d2447d683ae9d6735ce49082940eb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ManageFile::write</definition>
+        <argsstring>(string)</argsstring>
+        <name>write</name>
+        <param>
+          <type>string</type>
+          <defname>s</defname>
+        </param>
+        <briefdescription>
+<para>écrire une chaine de caractéres dans le fichier. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="45" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/ManageFile.cpp" bodystart="160" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_file_1a484495090715696f5cbda5c543f48237" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ManageFile::erase</definition>
+        <argsstring>()</argsstring>
+        <name>erase</name>
+        <briefdescription>
+<para>supprimer le contenu du fichier </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="48" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/ManageFile.cpp" bodystart="186" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_file_1a8eb66054851cb3752ded544b001df4f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ManageFile::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <briefdescription>
+<para>fermer le fichier </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="51" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/ManageFile.cpp" bodystart="197" bodyend="202"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" line="11" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/ManageFile.h" bodystart="11" bodyend="57"/>
+    <listofallmembers>
+      <member refid="class_manage_file_1ac779e525496629ade46b98614d81e232" prot="public" virt="non-virtual"><scope>ManageFile</scope><name>begin</name></member>
+      <member refid="class_manage_file_1a8eb66054851cb3752ded544b001df4f0" prot="public" virt="non-virtual"><scope>ManageFile</scope><name>close</name></member>
+      <member refid="class_manage_file_1abecdb462684f3fa27d51a8a6a1916583" prot="public" virt="non-virtual"><scope>ManageFile</scope><name>end</name></member>
+      <member refid="class_manage_file_1a484495090715696f5cbda5c543f48237" prot="public" virt="non-virtual"><scope>ManageFile</scope><name>erase</name></member>
+      <member refid="class_manage_file_1a0bb29aa252f23fe9eeeaf1f0afac7711" prot="private" virt="non-virtual"><scope>ManageFile</scope><name>file</name></member>
+      <member refid="class_manage_file_1abc31b87fa59ce977343415c6f31aed91" prot="public" virt="non-virtual"><scope>ManageFile</scope><name>getSize</name></member>
+      <member refid="class_manage_file_1a4518fd47f265a8fdf7390f4e3a379f48" prot="public" virt="non-virtual"><scope>ManageFile</scope><name>ManageFile</name></member>
+      <member refid="class_manage_file_1acb0b7319d4c4679ba80d8076711c483a" prot="private" virt="non-virtual"><scope>ManageFile</scope><name>nameFile</name></member>
+      <member refid="class_manage_file_1a1e108ebc91f037f6626b930a8bb4b48a" prot="public" virt="non-virtual"><scope>ManageFile</scope><name>readChar</name></member>
+      <member refid="class_manage_file_1acbb4cb80a8095b07eef0ac1e7158609e" prot="public" virt="non-virtual"><scope>ManageFile</scope><name>readLine</name></member>
+      <member refid="class_manage_file_1a6a381faaf02f1ae91977ac96559ade86" prot="public" virt="non-virtual"><scope>ManageFile</scope><name>readWordsOfLine</name></member>
+      <member refid="class_manage_file_1a8fc25ce213e0cdfd7cb1c317a1bc9f9e" prot="public" virt="non-virtual"><scope>ManageFile</scope><name>setPosition</name></member>
+      <member refid="class_manage_file_1aa26d29456bcaa4fd42c1972f80d14916" prot="private" virt="non-virtual"><scope>ManageFile</scope><name>type</name></member>
+      <member refid="class_manage_file_1a70b2f89264df559b4afffb9e9ca01294" prot="public" virt="non-virtual"><scope>ManageFile</scope><name>write</name></member>
+      <member refid="class_manage_file_1a74d2447d683ae9d6735ce49082940eb9" prot="public" virt="non-virtual"><scope>ManageFile</scope><name>write</name></member>
+      <member refid="class_manage_file_1a9e51cbd6892b25c9db2693a45b3b426a" prot="public" virt="non-virtual"><scope>ManageFile</scope><name>~ManageFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

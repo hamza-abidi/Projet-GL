@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_clear_src_8h" kind="file" language="C++">
+    <compoundname>ClearSrc.h</compoundname>
+    <includes local="no">cstdlib</includes>
+    <includedby refid="_map_8cpp" local="yes">/home/hamza/Bureau/Projet-GL/Projet GL/src/Map.cpp</includedby>
+    <incdepgraph>
+      <node id="19">
+        <label>cstdlib</label>
+      </node>
+      <node id="18">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/include/ClearSrc.h</label>
+        <link refid="ClearSrc.h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="21">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/src/Map.cpp</label>
+        <link refid="_map_8cpp"/>
+      </node>
+      <node id="20">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/include/ClearSrc.h</label>
+        <link refid="ClearSrc.h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_clear_src_8h_1a4953d1edcbbfc7e420c423ded1d5621a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void clear_screen</definition>
+        <argsstring>()</argsstring>
+        <name>clear_screen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ClearSrc.h" line="3" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/ClearSrc.h" bodystart="3" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;cstdlib&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>\function<sp/>clear_screen<sp/>est<sp/>une<sp/>fonction<sp/>permet<sp/>de<sp/>vider<sp/>le<sp/>console</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>clear_screen()</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>WINDOWS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>std::system(</highlight><highlight class="stringliteral">&quot;cls&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//\brief<sp/>si<sp/>on<sp/>est<sp/>est<sp/>sur<sp/>windows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>std::system<sp/>(</highlight><highlight class="stringliteral">&quot;clear&quot;</highlight><highlight class="normal">);</highlight><highlight class="comment">//\brief<sp/>si<sp/>on<sp/>est<sp/>sur<sp/>un<sp/>autre<sp/>systéme<sp/>d&apos;exploitation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/ClearSrc.h"/>
+  </compounddef>
+</doxygen>

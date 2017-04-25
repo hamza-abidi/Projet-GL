@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_d44c64559bbebec7f509842c48db8b23" kind="dir">
+    <compoundname>/home/hamza/Bureau/Projet-GL/Projet GL/include</compoundname>
+    <innerfile refid="_clear_src_8h">ClearSrc.h</innerfile>
+    <innerfile refid="_colors_8h">Colors.h</innerfile>
+    <innerfile refid="_cord_8h">Cord.h</innerfile>
+    <innerfile refid="_gameplay_8h">Gameplay.h</innerfile>
+    <innerfile refid="_input_8h">Input.h</innerfile>
+    <innerfile refid="_manage_file_8h">ManageFile.h</innerfile>
+    <innerfile refid="_map_8h">Map.h</innerfile>
+    <innerfile refid="termcolor_8h">termcolor.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/"/>
+  </compounddef>
+</doxygen>

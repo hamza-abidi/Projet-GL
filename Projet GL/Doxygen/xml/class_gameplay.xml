@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_gameplay" kind="class" language="C++" prot="public">
+    <compoundname>Gameplay</compoundname>
+    <basecompoundref refid="class_input" prot="private" virt="non-virtual">Input</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_gameplay_1a83c5a9eb81c8d43f30a44ca16ac13755" prot="private" static="no" mutable="no">
+        <type><ref refid="class_map" kindref="compound">Map</ref> *</type>
+        <definition>Map* Gameplay::map</definition>
+        <argsstring></argsstring>
+        <name>map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h" line="15" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gameplay_1a10a8e4b96be39f8fb5f28cec345d93c0" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_cord" kindref="compound">Cord</ref></type>
+        <definition>Cord Gameplay::player</definition>
+        <argsstring></argsstring>
+        <name>player</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h" line="16" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gameplay_1a04898da34fb7c6a290a193f9e7ec1219" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Gameplay::Gameplay</definition>
+        <argsstring>()</argsstring>
+        <name>Gameplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h" line="10" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Gameplay.cpp" bodystart="5" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gameplay_1af2912ef6ac2a135e1265996641bbe360" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Gameplay::Gameplay</definition>
+        <argsstring>(string)</argsstring>
+        <name>Gameplay</name>
+        <param>
+          <type>string</type>
+          <defname>nameMap</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h" line="11" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Gameplay.cpp" bodystart="11" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gameplay_1a39b2a4fe07eaacb9085dcfb9b93291a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Gameplay::play</definition>
+        <argsstring>()</argsstring>
+        <name>play</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h" line="13" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Gameplay.cpp" bodystart="18" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="26">
+        <label>Input</label>
+        <link refid="class_input"/>
+      </node>
+      <node id="25">
+        <label>Gameplay</label>
+        <link refid="class_gameplay"/>
+        <childnode refid="26" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="28">
+        <label>Input</label>
+        <link refid="class_input"/>
+      </node>
+      <node id="27">
+        <label>Gameplay</label>
+        <link refid="class_gameplay"/>
+        <childnode refid="28" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h" line="8" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h" bodystart="8" bodyend="17"/>
+    <listofallmembers>
+      <member refid="class_gameplay_1a04898da34fb7c6a290a193f9e7ec1219" prot="public" virt="non-virtual"><scope>Gameplay</scope><name>Gameplay</name></member>
+      <member refid="class_gameplay_1af2912ef6ac2a135e1265996641bbe360" prot="public" virt="non-virtual"><scope>Gameplay</scope><name>Gameplay</name></member>
+      <member refid="class_input_1abae3f379d3f157cf42dc857309832dba" prot="private" virt="non-virtual"><scope>Gameplay</scope><name>Input</name></member>
+      <member refid="class_input_1ad484f145862898815ede6fbac5ad8841" prot="private" virt="non-virtual"><scope>Gameplay</scope><name>keyboard</name></member>
+      <member refid="class_gameplay_1a83c5a9eb81c8d43f30a44ca16ac13755" prot="private" virt="non-virtual"><scope>Gameplay</scope><name>map</name></member>
+      <member refid="class_gameplay_1a39b2a4fe07eaacb9085dcfb9b93291a9" prot="public" virt="non-virtual"><scope>Gameplay</scope><name>play</name></member>
+      <member refid="class_gameplay_1a10a8e4b96be39f8fb5f28cec345d93c0" prot="private" virt="non-virtual"><scope>Gameplay</scope><name>player</name></member>
+      <member refid="class_input_1af2db35ba67c8a8ccd23bef6a482fc291" prot="private" virt="non-virtual"><scope>Gameplay</scope><name>~Input</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_cord_8h" kind="file" language="C++">
+    <compoundname>Cord.h</compoundname>
+    <includedby refid="_map_8h" local="yes">/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h</includedby>
+    <invincdepgraph>
+      <node id="29">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/include/Cord.h</label>
+        <link refid="Cord.h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h</label>
+        <link refid="_gameplay_8h_source"/>
+      </node>
+      <node id="32">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/src/Map.cpp</label>
+        <link refid="_map_8cpp"/>
+      </node>
+      <node id="30">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h</label>
+        <link refid="_map_8h_source"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_cord" prot="public">Cord</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_cord_8h_1a3fa985083700bcb699a93dfe0a566dba" prot="public" static="no">
+        <type>struct <ref refid="struct_cord" kindref="compound">Cord</ref></type>
+        <definition>typedef struct Cord Cord</definition>
+        <argsstring></argsstring>
+        <name>Cord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Cord.h" line="5" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="struct_cord" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_cord" kindref="compound">Cord</ref></highlight></codeline>
+<codeline lineno="2"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">}<ref refid="struct_cord" kindref="compound">Cord</ref>;</highlight></codeline>
+    </programlisting>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Cord.h"/>
+  </compounddef>
+</doxygen>

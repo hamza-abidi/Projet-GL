@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="struct_cord" kind="struct" language="C++" prot="public">
+    <compoundname>Cord</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_cord_1afb1c4bf87bc588dea27d45058146c028" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Cord::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Cord.h" line="3" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Cord.h" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_cord_1acad0fdd03b104ba6d363b9e48ea8a1a7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Cord::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Cord.h" line="4" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Cord.h" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Cord.h" line="2" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Cord.h" bodystart="1" bodyend="5"/>
+    <listofallmembers>
+      <member refid="struct_cord_1afb1c4bf87bc588dea27d45058146c028" prot="public" virt="non-virtual"><scope>Cord</scope><name>x</name></member>
+      <member refid="struct_cord_1acad0fdd03b104ba6d363b9e48ea8a1a7" prot="public" virt="non-virtual"><scope>Cord</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -22,7 +22,7 @@ class Map : public Colors  {
     /// \brief modifier la map
     bool modify(Cord,char);
 
-    /// \afficher la map
+    /// \brief afficher la map
     void display(Cord);
 
   private:

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_input" kind="class" language="C++" prot="public">
+    <compoundname>Input</compoundname>
+    <derivedcompoundref refid="class_gameplay" prot="private" virt="non-virtual">Gameplay</derivedcompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_input_1ac7defef555fc35449a2c65669c089f7b" prot="private" static="no" mutable="no">
+        <type>struct termios *</type>
+        <definition>struct termios* Input::old_tio</definition>
+        <argsstring></argsstring>
+        <name>old_tio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" line="16" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_input_1abae3f379d3f157cf42dc857309832dba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Input::Input</definition>
+        <argsstring>()</argsstring>
+        <name>Input</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" line="12" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Input.cpp" bodystart="6" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_input_1af2db35ba67c8a8ccd23bef6a482fc291" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Input::~Input</definition>
+        <argsstring>()</argsstring>
+        <name>~Input</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" line="13" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Input.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_input_1ad484f145862898815ede6fbac5ad8841" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char</type>
+        <definition>unsigned char Input::keyboard</definition>
+        <argsstring>()</argsstring>
+        <name>keyboard</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" line="14" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Input.cpp" bodystart="20" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="29">
+        <label>Input</label>
+        <link refid="class_input"/>
+      </node>
+      <node id="30">
+        <label>Gameplay</label>
+        <link refid="class_gameplay"/>
+        <childnode refid="29" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" line="10" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" bodystart="10" bodyend="17"/>
+    <listofallmembers>
+      <member refid="class_input_1abae3f379d3f157cf42dc857309832dba" prot="public" virt="non-virtual"><scope>Input</scope><name>Input</name></member>
+      <member refid="class_input_1ad484f145862898815ede6fbac5ad8841" prot="public" virt="non-virtual"><scope>Input</scope><name>keyboard</name></member>
+      <member refid="class_input_1ac7defef555fc35449a2c65669c089f7b" prot="private" virt="non-virtual"><scope>Input</scope><name>old_tio</name></member>
+      <member refid="class_input_1af2db35ba67c8a8ccd23bef6a482fc291" prot="public" virt="non-virtual"><scope>Input</scope><name>~Input</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

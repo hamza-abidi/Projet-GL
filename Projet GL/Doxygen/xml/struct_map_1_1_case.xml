@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="struct_map_1_1_case" kind="struct" language="C++" prot="private">
+    <compoundname>Map::Case</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_map_1_1_case_1a697debeddc17138f4593fe8eb68eabb3" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char Map::Case::c</definition>
+        <argsstring></argsstring>
+        <name>c</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" line="32" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_map_1_1_case_1a78f9261784576fe8d60c03537751c8ac" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Map::Case::monster</definition>
+        <argsstring></argsstring>
+        <name>monster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" line="33" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" line="31" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Map.h" bodystart="31" bodyend="34"/>
+    <listofallmembers>
+      <member refid="struct_map_1_1_case_1a697debeddc17138f4593fe8eb68eabb3" prot="public" virt="non-virtual"><scope>Map::Case</scope><name>c</name></member>
+      <member refid="struct_map_1_1_case_1a78f9261784576fe8d60c03537751c8ac" prot="public" virt="non-virtual"><scope>Map::Case</scope><name>monster</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,24 @@
+\section{/home/hamza/\+Bureau/\+Projet-\/\+G\+L/\+Projet G\+L/src/\+Manage\+File.cpp File Reference}
+\label{_manage_file_8cpp}\index{/home/hamza/\+Bureau/\+Projet-\/\+G\+L/\+Projet G\+L/src/\+Manage\+File.\+cpp@{/home/hamza/\+Bureau/\+Projet-\/\+G\+L/\+Projet G\+L/src/\+Manage\+File.\+cpp}}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include \char`\"{}../include/\+Manage\+File.\+h\char`\"{}}\\*
+Include dependency graph for Manage\+File.\+cpp\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries map\+\_\+directory}~\char`\"{}../maps/\char`\"{}\label{_manage_file_8cpp_ac1a54bf5b405091b796e40b5fe91d933}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Abidi Hamza 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+20 Avril 2017
+\end{DoxyDate}
+La classe \doxyref{Manage\+File}{p.}{class_manage_file} va s\textquotesingle{}occuper de l\textquotesingle{}ouverture , la fermeture , l\textquotesingle{}ecriture dans un fichier , la lecture à partir d\textquotesingle{}un fichier ..., elle gère l\textquotesingle{}affichage des erreurs d\textquotesingle{}ouverture des fichiers 

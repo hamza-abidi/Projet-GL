@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="main_8cpp" kind="file" language="C++">
+    <compoundname>main.cpp</compoundname>
+    <includes refid="_gameplay_8h" local="yes">../include/Gameplay.h</includes>
+    <incdepgraph>
+      <node id="86">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/src/main.cpp</label>
+        <link refid="main.cpp"/>
+        <childnode refid="87" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>termios.h</label>
+      </node>
+      <node id="91">
+        <label>Cord.h</label>
+        <link refid="_cord_8h_source"/>
+      </node>
+      <node id="89">
+        <label>string</label>
+      </node>
+      <node id="87">
+        <label>../include/Gameplay.h</label>
+        <link refid="_gameplay_8h_source"/>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>Map.h</label>
+        <link refid="_map_8h_source"/>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>Input.h</label>
+        <link refid="_input_8h_source"/>
+        <childnode refid="93" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>Colors.h</label>
+        <link refid="_colors_8h_source"/>
+        <childnode refid="89" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/src/main.cpp" line="3" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/main.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../include/Gameplay.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main(){</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gameplay" kindref="compound">Gameplay</ref><sp/>gameplay(</highlight><highlight class="stringliteral">&quot;../maps/map1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>gameplay.play();</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/src/main.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_input_8h" kind="file" language="C++">
+    <compoundname>Input.h</compoundname>
+    <includes local="no">termios.h</includes>
+    <includedby refid="_gameplay_8h" local="yes">/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h</includedby>
+    <includedby refid="_gameplay_8cpp" local="yes">/home/hamza/Bureau/Projet-GL/Projet GL/src/Gameplay.cpp</includedby>
+    <includedby refid="_input_8cpp" local="yes">/home/hamza/Bureau/Projet-GL/Projet GL/src/Input.cpp</includedby>
+    <incdepgraph>
+      <node id="42">
+        <label>termios.h</label>
+      </node>
+      <node id="41">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h</label>
+        <link refid="Input.h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="44">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/include/Gameplay.h</label>
+        <link refid="_gameplay_8h_source"/>
+      </node>
+      <node id="43">
+        <label>/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h</label>
+        <link refid="Input.h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_input" prot="public">Input</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_input_8h_1a1965eaca47dbf3f87acdafc2208f04eb" prot="public" static="no">
+        <name>UP</name>
+        <initializer>&apos;z&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" line="3" column="17" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_input_8h_1a80fb826a684cf3f0d306b22aa100ddac" prot="public" static="no">
+        <name>RIGHT</name>
+        <initializer>&apos;d&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" line="4" column="9" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_input_8h_1a4193cd1c8c2e6ebd0e056fa2364a663f" prot="public" static="no">
+        <name>DOWN</name>
+        <initializer>&apos;s&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" line="5" column="9" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_input_8h_1a437ef08681e7210d6678427030446a54" prot="public" static="no">
+        <name>LEFT</name>
+        <initializer>&apos;q&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" line="6" column="9" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_input_8h_1a4af1b6159e447ba72652bb7fcdfa726e" prot="public" static="no">
+        <name>ESC</name>
+        <initializer>27;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" line="7" column="9" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__INPUT_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__INPUT_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UP<sp/>&apos;z&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RIGHT<sp/>&apos;d&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DOWN<sp/>&apos;s&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LEFT<sp/>&apos;q&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ESC<sp/>27;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;termios.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_input" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_input" kindref="compound">Input</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_input" kindref="compound">Input</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="class_input" kindref="compound">Input</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>keyboard();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">termios*<sp/>old_tio;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Input.h"/>
+  </compounddef>
+</doxygen>

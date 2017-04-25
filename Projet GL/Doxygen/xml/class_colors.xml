@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_colors" kind="class" language="C++" prot="public">
+    <compoundname>Colors</compoundname>
+    <derivedcompoundref refid="class_map" prot="public" virt="non-virtual">Map</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_colors_1a65bde56fe97e9357aa8a901c0144eab5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Colors::Colors</definition>
+        <argsstring>()</argsstring>
+        <name>Colors</name>
+        <briefdescription>
+<para>constructeur <ref refid="class_colors" kindref="compound">Colors</ref> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Colors.h" line="14" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Colors.cpp" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_colors_1a22ceb07f137ca41c5772af5515337659" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Colors::activerTermcolor</definition>
+        <argsstring>(char)</argsstring>
+        <name>activerTermcolor</name>
+        <param>
+          <type>char</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>activer la coloration de tout ce qu&apos;on affiche sur l&apos;écran. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Colors.h" line="16" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Colors.cpp" bodystart="11" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_colors_1a7de6133476d73eaba1973184225c0641" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Colors::desactiverTermcolor</definition>
+        <argsstring>()</argsstring>
+        <name>desactiverTermcolor</name>
+        <briefdescription>
+<para>désactiver la coloration </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Colors.h" line="19" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Colors.cpp" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_colors_1ad28ab0599862a1abf71d49afa2386cdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Colors::displayColor</definition>
+        <argsstring>(char)</argsstring>
+        <name>displayColor</name>
+        <param>
+          <type>char</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>afficher une couleure </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Colors.h" line="22" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Colors.cpp" bodystart="35" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_colors_1a8a346bc73359978fda0a1f07c436a6f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Colors::displayColor</definition>
+        <argsstring>(string, char)</argsstring>
+        <name>displayColor</name>
+        <param>
+          <type>string</type>
+          <defname>s</defname>
+        </param>
+        <param>
+          <type>char</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>afficher une chaine de caractéres colorée RQ: le curseur reste sur la meme ligne </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Colors.h" line="25" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/src/Colors.cpp" bodystart="41" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="20">
+        <label>Colors</label>
+        <link refid="class_colors"/>
+      </node>
+      <node id="21">
+        <label>Map</label>
+        <link refid="class_map"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/hamza/Bureau/Projet-GL/Projet GL/include/Colors.h" line="11" column="1" bodyfile="/home/hamza/Bureau/Projet-GL/Projet GL/include/Colors.h" bodystart="11" bodyend="26"/>
+    <listofallmembers>
+      <member refid="class_colors_1a22ceb07f137ca41c5772af5515337659" prot="public" virt="non-virtual"><scope>Colors</scope><name>activerTermcolor</name></member>
+      <member refid="class_colors_1a65bde56fe97e9357aa8a901c0144eab5" prot="public" virt="non-virtual"><scope>Colors</scope><name>Colors</name></member>
+      <member refid="class_colors_1a7de6133476d73eaba1973184225c0641" prot="public" virt="non-virtual"><scope>Colors</scope><name>desactiverTermcolor</name></member>
+      <member refid="class_colors_1ad28ab0599862a1abf71d49afa2386cdd" prot="public" virt="non-virtual"><scope>Colors</scope><name>displayColor</name></member>
+      <member refid="class_colors_1a8a346bc73359978fda0a1f07c436a6f2" prot="public" virt="non-virtual"><scope>Colors</scope><name>displayColor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

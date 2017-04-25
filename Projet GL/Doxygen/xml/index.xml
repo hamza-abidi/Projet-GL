@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="struct_map_1_1_case" kind="struct"><name>Map::Case</name>
+    <member refid="struct_map_1_1_case_1a697debeddc17138f4593fe8eb68eabb3" kind="variable"><name>c</name></member>
+    <member refid="struct_map_1_1_case_1a78f9261784576fe8d60c03537751c8ac" kind="variable"><name>monster</name></member>
+  </compound>
+  <compound refid="class_colors" kind="class"><name>Colors</name>
+    <member refid="class_colors_1a65bde56fe97e9357aa8a901c0144eab5" kind="function"><name>Colors</name></member>
+    <member refid="class_colors_1a22ceb07f137ca41c5772af5515337659" kind="function"><name>activerTermcolor</name></member>
+    <member refid="class_colors_1a7de6133476d73eaba1973184225c0641" kind="function"><name>desactiverTermcolor</name></member>
+    <member refid="class_colors_1ad28ab0599862a1abf71d49afa2386cdd" kind="function"><name>displayColor</name></member>
+    <member refid="class_colors_1a8a346bc73359978fda0a1f07c436a6f2" kind="function"><name>displayColor</name></member>
+  </compound>
+  <compound refid="struct_cord" kind="struct"><name>Cord</name>
+    <member refid="struct_cord_1afb1c4bf87bc588dea27d45058146c028" kind="variable"><name>x</name></member>
+    <member refid="struct_cord_1acad0fdd03b104ba6d363b9e48ea8a1a7" kind="variable"><name>y</name></member>
+  </compound>
+  <compound refid="class_gameplay" kind="class"><name>Gameplay</name>
+    <member refid="class_gameplay_1a83c5a9eb81c8d43f30a44ca16ac13755" kind="variable"><name>map</name></member>
+    <member refid="class_gameplay_1a10a8e4b96be39f8fb5f28cec345d93c0" kind="variable"><name>player</name></member>
+    <member refid="class_gameplay_1a04898da34fb7c6a290a193f9e7ec1219" kind="function"><name>Gameplay</name></member>
+    <member refid="class_gameplay_1af2912ef6ac2a135e1265996641bbe360" kind="function"><name>Gameplay</name></member>
+    <member refid="class_gameplay_1a39b2a4fe07eaacb9085dcfb9b93291a9" kind="function"><name>play</name></member>
+  </compound>
+  <compound refid="class_input" kind="class"><name>Input</name>
+    <member refid="class_input_1ac7defef555fc35449a2c65669c089f7b" kind="variable"><name>old_tio</name></member>
+    <member refid="class_input_1abae3f379d3f157cf42dc857309832dba" kind="function"><name>Input</name></member>
+    <member refid="class_input_1af2db35ba67c8a8ccd23bef6a482fc291" kind="function"><name>~Input</name></member>
+    <member refid="class_input_1ad484f145862898815ede6fbac5ad8841" kind="function"><name>keyboard</name></member>
+  </compound>
+  <compound refid="class_manage_file" kind="class"><name>ManageFile</name>
+    <member refid="class_manage_file_1acb0b7319d4c4679ba80d8076711c483a" kind="variable"><name>nameFile</name></member>
+    <member refid="class_manage_file_1a0bb29aa252f23fe9eeeaf1f0afac7711" kind="variable"><name>file</name></member>
+    <member refid="class_manage_file_1aa26d29456bcaa4fd42c1972f80d14916" kind="variable"><name>type</name></member>
+    <member refid="class_manage_file_1a4518fd47f265a8fdf7390f4e3a379f48" kind="function"><name>ManageFile</name></member>
+    <member refid="class_manage_file_1a9e51cbd6892b25c9db2693a45b3b426a" kind="function"><name>~ManageFile</name></member>
+    <member refid="class_manage_file_1abc31b87fa59ce977343415c6f31aed91" kind="function"><name>getSize</name></member>
+    <member refid="class_manage_file_1ac779e525496629ade46b98614d81e232" kind="function"><name>begin</name></member>
+    <member refid="class_manage_file_1abecdb462684f3fa27d51a8a6a1916583" kind="function"><name>end</name></member>
+    <member refid="class_manage_file_1a8fc25ce213e0cdfd7cb1c317a1bc9f9e" kind="function"><name>setPosition</name></member>
+    <member refid="class_manage_file_1acbb4cb80a8095b07eef0ac1e7158609e" kind="function"><name>readLine</name></member>
+    <member refid="class_manage_file_1a6a381faaf02f1ae91977ac96559ade86" kind="function"><name>readWordsOfLine</name></member>
+    <member refid="class_manage_file_1a1e108ebc91f037f6626b930a8bb4b48a" kind="function"><name>readChar</name></member>
+    <member refid="class_manage_file_1a70b2f89264df559b4afffb9e9ca01294" kind="function"><name>write</name></member>
+    <member refid="class_manage_file_1a74d2447d683ae9d6735ce49082940eb9" kind="function"><name>write</name></member>
+    <member refid="class_manage_file_1a484495090715696f5cbda5c543f48237" kind="function"><name>erase</name></member>
+    <member refid="class_manage_file_1a8eb66054851cb3752ded544b001df4f0" kind="function"><name>close</name></member>
+  </compound>
+  <compound refid="class_map" kind="class"><name>Map</name>
+    <member refid="class_map_1a29d30032d9a86da8f15596f3db0f70cf" kind="typedef"><name>Case</name></member>
+    <member refid="class_map_1a089c89fe37673642dc0d187910ce992f" kind="variable"><name>map</name></member>
+    <member refid="class_map_1a3d3aad89dd0c12c8441d4a14c4cb0faf" kind="variable"><name>beginIndex</name></member>
+    <member refid="class_map_1a4ca92712bc649b9d9040ac2a5c3cdff8" kind="variable"><name>matrixMap</name></member>
+    <member refid="class_map_1ab92768fc2db576bf956f443190b58d90" kind="function"><name>Map</name></member>
+    <member refid="class_map_1a2e205067ea143008380b1c02c3753b44" kind="function"><name>modify</name></member>
+    <member refid="class_map_1a17acb1fedf9f309444179bd94a23b86e" kind="function"><name>display</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="namespacetermcolor" kind="namespace"><name>termcolor</name>
+  </compound>
+  <compound refid="_clear_src_8h" kind="file"><name>ClearSrc.h</name>
+    <member refid="_clear_src_8h_1a4953d1edcbbfc7e420c423ded1d5621a" kind="function"><name>clear_screen</name></member>
+  </compound>
+  <compound refid="_colors_8h" kind="file"><name>Colors.h</name>
+  </compound>
+  <compound refid="_cord_8h" kind="file"><name>Cord.h</name>
+    <member refid="_cord_8h_1a3fa985083700bcb699a93dfe0a566dba" kind="typedef"><name>Cord</name></member>
+  </compound>
+  <compound refid="_gameplay_8h" kind="file"><name>Gameplay.h</name>
+  </compound>
+  <compound refid="_input_8h" kind="file"><name>Input.h</name>
+    <member refid="_input_8h_1a1965eaca47dbf3f87acdafc2208f04eb" kind="define"><name>UP</name></member>
+    <member refid="_input_8h_1a80fb826a684cf3f0d306b22aa100ddac" kind="define"><name>RIGHT</name></member>
+    <member refid="_input_8h_1a4193cd1c8c2e6ebd0e056fa2364a663f" kind="define"><name>DOWN</name></member>
+    <member refid="_input_8h_1a437ef08681e7210d6678427030446a54" kind="define"><name>LEFT</name></member>
+    <member refid="_input_8h_1a4af1b6159e447ba72652bb7fcdfa726e" kind="define"><name>ESC</name></member>
+  </compound>
+  <compound refid="_manage_file_8h" kind="file"><name>ManageFile.h</name>
+  </compound>
+  <compound refid="_map_8h" kind="file"><name>Map.h</name>
+  </compound>
+  <compound refid="termcolor_8h" kind="file"><name>termcolor.h</name>
+  </compound>
+  <compound refid="_colors_8cpp" kind="file"><name>Colors.cpp</name>
+  </compound>
+  <compound refid="_gameplay_8cpp" kind="file"><name>Gameplay.cpp</name>
+  </compound>
+  <compound refid="_input_8cpp" kind="file"><name>Input.cpp</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_manage_file_8cpp" kind="file"><name>ManageFile.cpp</name>
+    <member refid="_manage_file_8cpp_1ac1a54bf5b405091b796e40b5fe91d933" kind="define"><name>map_directory</name></member>
+  </compound>
+  <compound refid="_map_8cpp" kind="file"><name>Map.cpp</name>
+    <member refid="_map_8cpp_1a9b05db8ab08a44c8bb2dfeb78fd61412" kind="define"><name>window_width</name></member>
+    <member refid="_map_8cpp_1ab2b8ce0216d9f11f046f97557b0b4eba" kind="define"><name>window_height</name></member>
+    <member refid="_map_8cpp_1aafb61187ba7b0f4f64dbb427793d1e4d" kind="define"><name>map_width</name></member>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>/home/hamza/Bureau/Projet-GL/Projet GL/include</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>/home/hamza/Bureau/Projet-GL/Projet GL/src</name>
+  </compound>
+</doxygenindex>
