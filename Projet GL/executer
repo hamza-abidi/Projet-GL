@@ -11,9 +11,7 @@ bin="bin/"
 src="src/"
 librairie="librairie.a"
 executable="Executable"
-sfml = ""
 
-cd `pwd`
 
 
 
@@ -88,7 +86,7 @@ done
 
 cd ..
 
-echo -e "lib: $lib\n\tar -q $libmat$librairie $fichierO\n\tg++ -std=c++11 -pthread -o $bin$executable $src$r $cppFiles -L /usr/include/SFML -lsfml-graphics -lsfml-window -lsfml-system $libmat$librairie\n">>makefile
+echo -e "lib: $lib\n\tar -q $libmat$librairie $fichierO\n\tg++ -std=c++11 -pthread -o $bin$executable $src$r $cppFiles $libmat$librairie\n">>makefile
 
 #creation du Main
 echo -e "$obj`basename $r .cpp`.o :  $src$r\n\tg++ -std=c++11 -pthread -o $obj`basename $r .cpp`.o -c $src$r\n">>makefile
@@ -101,7 +99,7 @@ echo -e "clean:\n	rm -rf obj/*.o\nmrproper: clean\n	rm -rf bin/"$executable>>mak
 
 
 make
-reset
+#reset
 
 cd bin
 

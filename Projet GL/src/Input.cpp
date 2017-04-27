@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
-
+//
+//
 Input::Input() {
 	old_tio = new termios;
 	tcgetattr(STDIN_FILENO, old_tio);
@@ -41,7 +42,35 @@ unsigned char Input::keyboard() {
 			}
 			else return ESC;
 		}
-		if(c == UP | c == RIGHT | c == DOWN | c == DOWN) return c;
+		else if(c == '/') {
+			printf("ok");
+			printf("\033[s");
+			printf("\n\n\n");
+			unsigned char s[15];
+			char i = 0;
+			printf("/");
+			while(c != 10 && i != 14 && i >= 0) {
+				c = getchar();
+				if(c == 127) {
+					printf("\033[1D \033[1D");
+					s[i] = '\0';
+					i--;
+				}
+				else {
+					printf("%c",c);
+					s[i] = c;
+					i++;
+				}
+			}
+			s[i] = '\0';
+			printf("\033[u");
+			if(s[0] == 's')
+				return SAVE;
+			if(s[0] == 'q')
+				return QUIT;
+		}
+		else if(c == UP | c == RIGHT | c == DOWN | c == LEFT)
+			return c;
 	} while(true);
 
 }

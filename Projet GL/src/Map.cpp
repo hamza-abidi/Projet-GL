@@ -1,7 +1,3 @@
-#define window_width 121 // \brief La largeur maximale de la map (la longueur des lignes du fichier texte qui represente la map)
-#define window_height 21 // \brief La hauteur maximale de la map (le nombre des lignes du fichier texte qui represente la map)
-#define map_width 40 // \brief La largeur du segment qui sera affiché sur l'ecran 
-
 #include <string>
 #include <iostream>
 #include <time.h>
@@ -65,6 +61,7 @@ bool Map::modify(Cord cord , char move){
 }
 
 void Map::display(Cord cord){
+	clear_screen();
 	for (int  i = 0 ; i < window_height ; i++){
 		for(int j = beginIndex ; j < beginIndex+map_width; j++){
   			switch(matrixMap[i][j].c){

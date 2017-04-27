@@ -7,6 +7,10 @@
 /// une map est construite par un ensemble des lettres dans un fichier texte (a : arbre , h : herbe , e : eau)
 ///
 
+#define window_width 121 // \brief La largeur maximale de la map (la longueur des lignes du fichier texte qui represente la map)
+#define window_height 21 // \brief La hauteur maximale de la map (le nombre des lignes du fichier texte qui represente la map)
+#define map_width 40 // \brief La largeur du segment qui sera affiché sur l'ecran 
+
 #include <string>
 #include "Colors.h"
 #include "Cord.h"
