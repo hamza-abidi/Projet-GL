@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include <unistd.h>
 
-//
-//
 Input::Input() {
 	old_tio = new termios;
 	tcgetattr(STDIN_FILENO, old_tio);
