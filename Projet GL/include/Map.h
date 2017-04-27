@@ -6,7 +6,9 @@
 ///
 /// une map est construite par un ensemble des lettres dans un fichier texte (a : arbre , h : herbe , e : eau)
 ///
-
+#define MONSTER 2
+#define MOVE 1
+#define BLOCK 0
 #include <string>
 #include "Colors.h"
 #include "Cord.h"
@@ -20,13 +22,25 @@ class Map : public Colors  {
     Map(string map);
 
     /// \brief modifier la map
-    bool modify(Cord,char);
+    int move(Cord,char);
 
     /// \brief afficher la map
     void display(Cord);
 
+    /// \brief récuperer la largeur de la map
+    int getWidth();
+
+    /// \brief récuperer la langueur de la map
+    int getHeight();
+
+    /// \brief récuperer la largeur d'un segment de la map
+    int getSegmentWidth();
+
+    /// \brief retourne vrai si on peut accéder a une case donnée
+    bool accessible(Cord);
   private:
     string map;
+    int monstersNumber ;
     int beginIndex;
     typedef struct Case{
       char c;

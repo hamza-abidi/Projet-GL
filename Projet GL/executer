@@ -11,7 +11,7 @@ bin="bin/"
 src="src/"
 librairie="librairie.a"
 executable="Executable"
-sfml = ""
+sfml=""
 
 cd `pwd`
 
