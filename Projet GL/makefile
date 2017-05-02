@@ -2,7 +2,11 @@ all : lib
 
 lib:  obj/Colors.o obj/Gameplay.o obj/Input.o obj/main.o obj/ManageFile.o obj/Map.o
 	ar -q lib/librairie.a obj/Colors.o obj/Gameplay.o obj/Input.o obj/ManageFile.o obj/Map.o 
+<<<<<<< HEAD
 	g++ -std=c++11 -o bin/Executable src/main.cpp src/Colors.cpp src/Gameplay.cpp src/Input.cpp src/ManageFile.cpp src/Map.cpp  -L /usr/include/SFML -lsfml-graphics -lsfml-window -lsfml-system lib/librairie.a
+=======
+	g++ -std=c++11 -pthread -o bin/Executable src/main.cpp src/Colors.cpp src/Gameplay.cpp src/Input.cpp src/ManageFile.cpp src/Map.cpp  lib/librairie.a
+>>>>>>> 8642fb27936cd1f00bfb75089e26897d740d4b4e
 
 obj/main.o :  src/main.cpp
 	g++ -std=c++11 -o obj/main.o -c src/main.cpp

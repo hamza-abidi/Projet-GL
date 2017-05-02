@@ -1,7 +1,10 @@
+<<<<<<< HEAD
+=======
 #define window_width 121 // \brief La largeur maximale de la map (la longueur des lignes du fichier texte qui represente la map)
 #define window_height 21 // \brief La hauteur maximale de la map (le nombre des lignes du fichier texte qui represente la map)
 #define segment_width 40 // \brief La largeur du segment qui sera affiché sur l'ecran
 
+>>>>>>> 7080e298f67d7b2c0d66eaa625886605d7e13668
 #include <string>
 #include <iostream>
 #include <time.h>
@@ -73,7 +76,11 @@ int Map::move(Cord cord , char moving){
 }
 
 void Map::display(Cord cord){
+<<<<<<< HEAD
   clear_screen();
+=======
+	clear_screen();
+>>>>>>> 8642fb27936cd1f00bfb75089e26897d740d4b4e
 	for (int  i = 0 ; i < window_height ; i++){
 		for(int j = beginIndex ; j < beginIndex+segment_width; j++){
   			switch(matrixMap[i][j].c){
