@@ -16,7 +16,6 @@ Map::Map(string nameMap) : Colors(){
   beginIndex = monstersNumber = 0;
   matrixMap = new Case*[window_height];
   ManageFile file(nameMap , "r");
-  char c ;
   srand(time(NULL));
   for (int  i = 0 ; i < window_height ; i++){
   	matrixMap[i] = new Case[window_width];
@@ -36,7 +35,6 @@ Map::Map(string nameMap) : Colors(){
 int Map::move(Cord cord , char moving){
   if((cord.y - beginIndex) == segment_width){
     beginIndex = cord.y ;
-    clear_screen();
     cout << "\033[0;0H";
     display(cord);
     cout << "\033["<<cord.x+1<<";"<<0<<"H";
@@ -75,6 +73,7 @@ int Map::move(Cord cord , char moving){
 }
 
 void Map::display(Cord cord){
+  clear_screen();
 	for (int  i = 0 ; i < window_height ; i++){
 		for(int j = beginIndex ; j < beginIndex+segment_width; j++){
   			switch(matrixMap[i][j].c){

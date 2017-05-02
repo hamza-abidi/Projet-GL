@@ -41,7 +41,7 @@ unsigned char Input::keyboard() {
 			}
 			else return ESC;
 		}
-		if(c == UP | c == RIGHT | c == DOWN | c == DOWN) return c;
+		if(c == UP || c == RIGHT || c == DOWN || c == LEFT) return c;
 	} while(true);
 
 }

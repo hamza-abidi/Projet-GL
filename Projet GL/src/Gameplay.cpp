@@ -31,22 +31,22 @@ void Gameplay::play() {
 		if(c == UP) {
 			moving = 'A';
 			player.x -= 1;
-			if(map->modify(player, moving) == BLOCK) player.x += 1;
+			if(map->move(player, moving) == BLOCK) player.x += 1;
 		}
 		else if(c == DOWN) {
 			moving = 'B';
 			player.x += 1;
-			if(map->modify(player, moving) == BLOCK) player.x -= 1;
+			if(map->move(player, moving) == BLOCK) player.x -= 1;
 		}
 		else if(c == RIGHT) {
 			moving = 'C';
 			player.y += 1;
-			if(map->modify(player, moving) == BLOCK) player.y -= 1;
+			if(map->move(player, moving) == BLOCK) player.y -= 1;
 		}
 		else if(c == LEFT) {
 			moving = 'D';
 			player.y -= 1;
-			if(map->modify(player, moving) == BLOCK) player.y += 1;
+			if(map->move(player, moving) == BLOCK) player.y += 1;
 		}
 	}
 }
