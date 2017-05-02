@@ -41,44 +41,42 @@ int Map::move(Cord cord , char moving){
     cout << "\033["<<cord.x+1<<";"<<0<<"H";
     return MOVE;
   }
-  else if(cord.y < window_width && cord.x < window_height && cord.y >= 0 && cord.x >= 0 && matrixMap[cord.x][cord.y].c != 'e' && matrixMap[cord.x][cord.y].c != 'a' ){
-    if(cord.y < beginIndex && beginIndex != 0){
-      beginIndex -= segment_width ;
-      clear_screen();
-      cout << "\033[0;0H";
-      display(cord);
-      cout << "\033["<<cord.x+1<<";"<<segment_width<<"H";
+  else if(cord.y < window_width && cord.x < window_height && cord.y >= 0 && cord.x >= 0){
+    if(matrixMap[cord.x][cord.y].c != 'e' && matrixMap[cord.x][cord.y].c != 'a' ){
+      if(cord.y < beginIndex && beginIndex != 0){
+        beginIndex -= segment_width ;
+        cout << "\033[0;0H";
+        display(cord);
+        cout << "\033["<<cord.x+1<<";"<<segment_width<<"H";
+        return MOVE;
+      }
+      switch (moving) {
+        case 'A': cout << "\033[A" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[B" ;break;
+        case 'B': cout << "\033[B" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[A" ;break;
+        case 'C': cout << "\033[C" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[D" ;break;
+        case 'D': cout << "\033[D" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[C" ;break;
+      }
+      displayColor(" ",'V');cout << "\033[D" ;
+      switch (moving) {
+        case 'A': cout << "\033[A" ;break;
+        case 'B': cout << "\033[B" ;break;
+        case 'C': cout << "\033[C" ;break;
+        case 'D': cout << "\033[D" ;break;
+      }
       return MOVE;
     }
-    switch (moving) {
-      case 'A': cout << "\033[A" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[B" ;break;
-      case 'B': cout << "\033[B" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[A" ;break;
-      case 'C': cout << "\033[C" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[D" ;break;
-      case 'D': cout << "\033[D" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[C" ;break;
+    else{
+      if(matrixMap[cord.x][cord.y].monster)
+        return MONSTER ;
+      else
+        return BLOCK;
     }
-    displayColor(" ",'V');cout << "\033[D" ;
-    switch (moving) {
-      case 'A': cout << "\033[A" ;break;
-      case 'B': cout << "\033[B" ;break;
-      case 'C': cout << "\033[C" ;break;
-      case 'D': cout << "\033[D" ;break;
-    }
-    return MOVE;
   }
-  else{
-    if(matrixMap[cord.x][cord.y].monster)
-      return MONSTER ;
-    else
-      return BLOCK;
-  }
+  return BLOCK;
 }
 
 void Map::display(Cord cord){
-<<<<<<< HEAD
-  clear_screen();
-=======
 	clear_screen();
->>>>>>> 8642fb27936cd1f00bfb75089e26897d740d4b4e
 	for (int  i = 0 ; i < window_height ; i++){
 		for(int j = beginIndex ; j < beginIndex+segment_width; j++){
   			switch(matrixMap[i][j].c){
@@ -100,7 +98,6 @@ void Map::display(Cord cord){
       cout << '\n';
 		}
 	}
-
   int Map::getWidth(){
     return window_width ;
   }
