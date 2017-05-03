@@ -40,7 +40,7 @@ unsigned char Input::keyboard() {
 			}
 			else return ESC;
 		}
-		if(c == UP || c == RIGHT || c == DOWN || c == LEFT) return c;
+		if(c == UP || c == RIGHT || c == DOWN || c == LEFT || c == ENT) return c;
 		else if(c == '/') {
 			printf("ok");
 			printf("\033[s");
@@ -68,7 +68,7 @@ unsigned char Input::keyboard() {
 			if(s[0] == 'q')
 				return QUIT;
 		}
-		else if(c == UP | c == RIGHT | c == DOWN | c == LEFT)
+		else if(c == UP || c == RIGHT || c == DOWN || c == LEFT)
 			return c;
 	} while(true);
 

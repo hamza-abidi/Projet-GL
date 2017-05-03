@@ -6,10 +6,8 @@
 ///
 /// une map est construite par un ensemble des lettres dans un fichier texte (a : arbre , h : herbe , e : eau)
 ///
-
-#define window_width 121 // \brief La largeur maximale de la map (la longueur des lignes du fichier texte qui represente la map)
-#define window_height 21 // \brief La hauteur maximale de la map (le nombre des lignes du fichier texte qui represente la map)
-#define map_width 40 // \brief La largeur du segment qui sera affiché sur l'ecran
+#ifndef _MAP_H_
+#define _MAP_H_
 
 #define MONSTER 2
 #define MOVE 1
@@ -17,7 +15,16 @@
 #include <string>
 #include "Colors.h"
 #include "Cord.h"
-using namespace std ;
+#include <iostream>
+#include <time.h>
+#include "ManageFile.h"
+// #include "ClearSrc.h"
+
+#define window_width 121 // \brief La largeur maximale de la map (la longueur des lignes du fichier texte qui represente la map)
+#define window_height 21 // \brief La hauteur maximale de la map (le nombre des lignes du fichier texte qui represente la map)
+#define segment_width 40 // \brief La largeur du segment qui sera affiché sur l'ecran
+
+
 
 /// \class Map
 /// \bried La classe Map herite la classe Colors
@@ -25,6 +32,9 @@ class Map : public Colors  {
   public :
     /// \brief initialiser la map avec un le nom d'un fichier texte qui contient les éléments de la map
     Map(string map);
+
+    /// \brief Désallocation de la memoire
+    ~Map();
 
     /// \brief modifier la map
     int move(Cord,char);
@@ -54,3 +64,4 @@ class Map : public Colors  {
 
     Case** matrixMap ;
 };
+#endif

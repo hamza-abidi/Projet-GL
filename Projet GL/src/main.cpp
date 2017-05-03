@@ -1,9 +1,7 @@
-#include "../include/Gameplay.h"
-#include <stdio.h>
-using namespace std;
+#include "../include/Menu.h"
 int main(){
 
-	Gameplay gameplay("../maps/map1");
-	gameplay.play();
+	Menu menu;
+	menu.menuPrincipal();
 	return 0;
 }

@@ -8,7 +8,7 @@ using namespace std;
 using namespace termcolor;
 
 Colors::Colors(){}
-void Colors::activerTermcolor(char c){
+void Colors::activerTermcolorBackground(char c){
   switch(toupper(c)){
     case 'R' : cout << on_red;
               break;
@@ -28,6 +28,25 @@ void Colors::activerTermcolor(char c){
   }
 }
 
+void Colors::activerTermcolor(char c){
+  switch(toupper(c)){
+    case 'R' : cout << red;
+              break;
+    case 'B' : cout << blue;
+              break;
+    case 'V' : cout << green;
+              break;
+    case 'J' : cout << yellow;
+              break;
+    case 'M' : cout << magenta;
+              break;
+    case 'C' : cout << cyan;
+              break;
+    case 'N' : cout << grey;
+              break;
+    default :std::cout << "cette couleur n'existe pas parmis les choix disponibles" << '\n';
+  }
+}
 
 void Colors::desactiverTermcolor(){
   cout<<termcolor::reset;
@@ -39,6 +58,12 @@ void Colors::displayColor(char c){
 }
 
 void Colors::displayColor(string s ,char c){
+  activerTermcolorBackground(c);
+  std::cout << s;
+  desactiverTermcolor();
+}
+
+void Colors::setColorText(string s ,char c){
   activerTermcolor(c);
   std::cout << s;
   desactiverTermcolor();

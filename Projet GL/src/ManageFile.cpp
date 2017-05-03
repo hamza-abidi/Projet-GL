@@ -1,7 +1,3 @@
-#define map_directory "../maps/"
-#include <string>
-#include <iostream>
-#include <fstream>
 #include "../include/ManageFile.h"
 using namespace std ;
 
@@ -15,13 +11,13 @@ ManageFile::ManageFile(string name , string type){
 }
 
 ManageFile::~ManageFile(){
-  if(file)
+  if(file.is_open())
     file.close();
 }
 
 long ManageFile::getSize(){
-  if(file){
-    long size ;
+  if(file.is_open()){
+    long size = 0 ;
         if(this->type == "r"){ file.seekg( 0 , ios_base::end );
         size = file.tellg() ;
         }
@@ -37,14 +33,35 @@ long ManageFile::getSize(){
   }
   else{
     cout << "erreur : methode getSize , fichier : " << nameFile << " , impossible de recuperer la taille d'un fichier fermé !" <<'\n';
+    return -1;
+  }
+}
+
+int ManageFile::getNumberLines(){
+  if(file.is_open()){
+    int size = 0 ;
+      int positionInitiale = file.gcount();
+      begin();
+    string s ;
+    while(readLine() != ""){
+      size++;
+    }
+    begin();
+    setPosition(positionInitiale);
+    return size ;
+ }
+  else{
+    cout << "erreur : methode getNumberLines , fichier : " << nameFile << " , impossible de recuperer le nombre des lignes d'un fichier fermé !" <<'\n';
+    return -1 ;
   }
 }
 
 bool ManageFile::begin(){
-  if(file){
-      if(this->type == "r") file.seekg( 0);
-      else if(this->type == "w") file.seekp( 0 );
-      else if(this->type == "rw") file.seekg( 0  );
+  if(file.is_open()){
+      file.clear();
+      if(this->type == "r") file.seekg(ios_base::beg);
+      else if(this->type == "w") file.seekp(ios_base::beg);
+      else if(this->type == "rw") file.seekg(ios_base::beg);
 
     return true ;
   }
@@ -54,8 +71,8 @@ bool ManageFile::begin(){
   }
 }
 bool ManageFile::end(){
-  if(file){
-
+  if(file.is_open()){
+      file.clear();
       if(this->type == "r"){ file.seekg( 0 , ios_base::end );
       }
 
@@ -72,7 +89,8 @@ bool ManageFile::end(){
   }
 }
 bool ManageFile::setPosition(int position){
-  if(file){
+  if(file.is_open()){
+    file.clear();
     if(this->type == "r"){ file.seekg( ios_base::beg);
     }
 
@@ -82,7 +100,7 @@ bool ManageFile::setPosition(int position){
     else if(this->type == "rw"){ file.seekg( ios_base::beg);
     }
     string s ;
-    int i = 1 ;
+    int i = 0 ;
     while(i != position && getline(file,s)){
       i++;
     }
@@ -100,7 +118,7 @@ char ManageFile::readChar(){
     type = "r";
   }
 
-  if(file){
+  if(file.is_open()){
     char c;
     file.get(c);
     return c;
@@ -117,10 +135,12 @@ string ManageFile::readLine(){
     type = "r";
   }
 
-  if(file){
+  if(file.is_open()){
     string s = "" ;
-    getline(file,s);
-    return s;
+    if(getline(file,s))
+      return s;
+    else
+      return "";
   }
   else{
     cout << "erreur : methode readLine , Impossible d'ouvrir le fichier " <<nameFile<< " en lecture !" <<'\n';
@@ -133,17 +153,25 @@ string* ManageFile::readWordsOfLine(char separateur){
     file.open(nameFile , ios::in);
     type = "r";
   }
-  if(file){
+  if(file.is_open()){
     string s = "" ;
     getline(file,s);
-    string* tmp = new string[s.length()];
+
+    int n = 0 ;
+    for(unsigned i = 0 ; i <s.length() ; i++){
+      if(s[i] == separateur)
+        n++;
+    }
+
+    string* tmp = new string[n];
     int j = 0 ;
     string tmps = "";
-    for(int i = 0 ; i < s.length() ;i++){
+    for(unsigned i = 0 ; i < s.length() ;i++){
       if(s[i] != separateur){
         tmps += s[i];
       }
       else{
+        std::cout << tmps << '\n';
         tmp[j] = tmps ;
         j++;
         tmps = "";
@@ -162,7 +190,7 @@ void ManageFile::write(string s){
     file.open(nameFile , ios::out);
     type = "w";
   }
-  if(file)
+  if(file.is_open())
     file << s ;
   else{
     cout << "erreur : methode write(string) , Impossible d'ouvrir le fichier " <<nameFile<< " en écriture !"<< '\n';
@@ -175,7 +203,7 @@ void ManageFile::write(char c){
     file.open(nameFile , ios::out);
     type = "w";
   }
-  if(file)
+  if(file.is_open())
     file << c ;
   else{
     cout << "erreur : methode write(char) , Impossible d'ouvrir le fichier " <<nameFile<< " en écriture !" <<'\n';
@@ -184,7 +212,7 @@ void ManageFile::write(char c){
 }
 
 void ManageFile::erase(){
-  if(file){
+  if(file.is_open()){
     file.close();
     if(this->type == "r") file.open(nameFile , ios::in | ios::trunc);
     else if(this->type == "w") file.open(nameFile , ios::out | ios::trunc);
@@ -195,7 +223,7 @@ void ManageFile::erase(){
 }
 
 void ManageFile::close(){
-  if(file)
+  if(file.is_open())
     file.close();
   else
     cout << "erreur : methode close , fichier : " << nameFile << " , est déja fermé !" <<'\n';

@@ -26,7 +26,7 @@ void Gameplay::play() {
 	char moving = 'A';
 	map->display(player);
 	cout << "\033["<<player.x+1<<";"<<player.y+1<<"H";
-	char c = '.';
+	char c ;
 	while(true) {
 		c = keyboard();
 		if(c == UP) {

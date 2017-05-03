@@ -4,8 +4,11 @@
 ///
 /// La classe ManageFile va s'occuper de l'ouverture , la fermeture , l'ecriture dans un fichier ,
 /// la lecture à partir d'un fichier ..., elle gère l'affichage des erreurs d'ouverture des fichiers
-
+#ifndef _MANAGEFILE_H_
+#define _MANAGEFILE_H_
+#define map_directory "../maps/"
 #include <string>
+#include <iostream>
 #include <fstream>
 using namespace std ;
 class ManageFile{
@@ -19,6 +22,9 @@ class ManageFile{
 
     /// \brief recuperer la taille du fichier [le nombre de caractéres]
     long getSize();
+
+    /// \brief recuperer le nombre des lignes d'un fichier
+    int getNumberLines();
 
     /// \brief positionner le curseur sur la première ligne
     bool begin();
@@ -55,3 +61,4 @@ class ManageFile{
     fstream file;
     string type; /// \breif ouvert en lecture , ecriture ou en lecture et écriture
 };
+#endif
