@@ -61,7 +61,13 @@ class Perso
 		
 		void displayStat();
 		void displayClasse();
-		void displaySkill();
+		
+		int displaySkill();
+		void displayFrame(bool choice, int numSkill, int numSize);
+		
+		int numbSize( int numSkill);
+		int costSize(int numSkill);
+		int damSize( int numSkill);
 
 };
 
