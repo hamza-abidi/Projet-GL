@@ -2,7 +2,7 @@ all : lib
 
 lib:  obj/ClearSrc.o obj/Colors.o obj/Fight.o obj/Gameplay.o obj/Input.o obj/main.o obj/ManageFile.o obj/Map.o obj/Menu.o obj/Perso.o
 	ar -q lib/librairie.a obj/ClearSrc.o obj/Colors.o obj/Fight.o obj/Gameplay.o obj/Input.o obj/ManageFile.o obj/Map.o obj/Menu.o obj/Perso.o 
-	g++ -std=c++11 -o bin/Executable src/main.cpp src/ClearSrc.cpp src/Colors.cpp src/Fight.cpp src/Gameplay.cpp src/Input.cpp src/ManageFile.cpp src/Map.cpp src/Menu.cpp src/Perso.cpp  -L /usr/include/SFML -lsfml-graphics -lsfml-window -lsfml-system lib/librairie.a
+	g++ -std=c++11 -o bin/Executable src/main.cpp src/ClearSrc.cpp src/Colors.cpp src/Fight.cpp src/Gameplay.cpp src/Input.cpp src/ManageFile.cpp src/Map.cpp src/Menu.cpp src/Perso.cpp  lib/librairie.a
 
 obj/main.o :  src/main.cpp
 	g++ -std=c++11 -o obj/main.o -c src/main.cpp

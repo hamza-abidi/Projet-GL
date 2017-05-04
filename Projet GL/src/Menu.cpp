@@ -108,17 +108,45 @@ void Menu::parametresJeu(){
    }
 
    std::cout << '\n'<< '\n'<< '\n'<< '\n'<< '\n';
-   for(int k = 0 ; k < 4 ; k++){
+
      for(int i = 0 ; i < nbJoueurs ; i++){
        if(choix == 1 && indJoueur == i){
-        color.setColorText("Nom:   "+joueurs[i][k]+"  ",'R');
+        color.setColorText("Nom:   "+joueurs[i][0]+"  ",'R');
        }
        else{
-           std::cout <<"| "<< joueurs[i][k] << "  ";
+           std::cout <<"| "<< joueurs[i][0] << "  ";
        }
      }
      std::cout << '\n';
-  }
+
+     for(int i = 0 ; i < nbJoueurs ; i++){
+       if(choix == 1 && indJoueur == i){
+        color.setColorText("PV:   "+joueurs[i][1]+"  ",'R');
+       }
+       else{
+           std::cout <<"| "<< joueurs[i][1] << "  ";
+       }
+     }
+     std::cout << '\n';
+     for(int i = 0 ; i < nbJoueurs ; i++){
+       if(choix == 1 && indJoueur == i){
+        color.setColorText("MANA:   "+joueurs[i][2]+"  ",'R');
+       }
+       else{
+           std::cout <<"| "<< joueurs[i][2] << "  ";
+       }
+     }
+     std::cout << '\n';
+     for(int i = 0 ; i < nbJoueurs ; i++){
+       if(choix == 1 && indJoueur == i){
+        color.setColorText("Armure:   "+joueurs[i][3]+"  ",'R');
+       }
+       else{
+           std::cout <<"| "<< joueurs[i][3] << "  ";
+       }
+     }
+     std::cout << '\n';
+
    c = keyboard();
 
   switch(c){
