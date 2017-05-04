@@ -438,7 +438,7 @@ int Perso::displaySkill()
 	int numSize=0;
 	int tmp=0;
 	
-	while (c!=ENTER)
+	while (c!=ENT)
 	{	
 
 
