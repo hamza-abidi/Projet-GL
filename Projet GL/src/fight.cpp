@@ -6,8 +6,8 @@
 #include <fstream>
 #include <time.h>
 
-#include "../include/fight.h"
-#include "../include/perso.h"
+#include "../include/Fight.h"
+#include "../include/Perso.h"
 
 
 using namespace std;
@@ -72,9 +72,9 @@ using namespace std;
 		}
 		else
 		{
-			entity[turn].displaySkill(); //-------------------------
-			cout<<endl;
-			skillNum=manualChooseSkill();  //-----------------------interface
+			skillNum=entity[turn].displaySkill();  //---------------------
+	//		cout<<endl;
+	//		skillNum=manualChooseSkill();  //-----------------------interface
 		}	
 		
 
@@ -169,6 +169,7 @@ using namespace std;
 		int choice;
 		cout<<"quel perso : ";
 		cin>>choice;
+		cout<<endl;
 		choice-=1;
 		if (choice>numbOfEntity || choice<0)
 		{
@@ -183,12 +184,15 @@ using namespace std;
 		int choice;
 		cout<<"quel skill : ";
 		cin>>choice;
+		cout<<endl;
 		if (choice>3 || choice<0)
 		{
-			cout<<"ce skill n'existe pas"<<endl;
+			cout<<"error"<<endl;
 			choice=manualChooseSkill();
 		}
 		return choice;
 	}
-	 
+
+
+	
 	
