@@ -8,9 +8,10 @@
 #ifndef PERSO_H
 #define PERSO_H
 
+#include "../include/Input.h"
 
 
-class Perso
+class Perso : Input
 {
 	private:
 		bool ia;
@@ -61,13 +62,14 @@ class Perso
 		
 		void displayStat();
 		void displayClasse();
-		
+
 		int displaySkill();
 		void displayFrame(bool choice, int numSkill, int numSize);
 		
 		int numbSize( int numSkill);
 		int costSize(int numSkill);
 		int damSize( int numSkill);
+		
 
 };
 
