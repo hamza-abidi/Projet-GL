@@ -113,10 +113,9 @@ int Input::inInt(){
 	bool negative = false;
 	int i = 0;
 	int a =  0;
-	unsigned char c = 0;
+	unsigned char c = getchar();
 	
-	c = getchar();
-	do {
+	while(c != ENT) {
 		if(i == 0 && c == '-') {
 			negative = true;
 			printf("-");
@@ -138,7 +137,49 @@ int Input::inInt(){
 			i--;
 		}
 		c = getchar();
-	}while(c != ENT);
+	}
 	if(negative) a *= -1;
 	return a;
+}
+
+std::string Input::inString(int l) {
+	int i = 0;
+	std::string s;
+	unsigned char c = getchar();
+	
+	while(c != ENT){
+		if(i < l && c >= ' ' && c <= '~') {
+			printf("%c",c);
+			s.push_back(c);
+			i++;
+		}
+		else if(c == 127 && i > 0) {
+			printf("\033[1D \033[1D");
+			i--;
+			s.resize(i);
+		}
+		c = getchar();
+	}
+	return s;
+}
+
+std::string Input::inString() {
+	int i = 0;
+	std::string s;
+	unsigned char c = getchar();
+	
+	while(c != ENT){
+		if(c >= ' ' && c <= '~') {
+			printf("%c",c);
+			s.push_back(c);
+			i++;
+		}
+		else if(c == 127 && i > 0) {
+			printf("\033[1D \033[1D");
+			i--;
+			s.resize(i);
+		}
+		c = getchar();
+	}
+	return s;
 }
