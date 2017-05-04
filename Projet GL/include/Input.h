@@ -12,6 +12,7 @@
 #define window_height 21 // \brief La hauteur maximale de la map (le nombre des lignes du fichier texte qui represente la map)
 #define map_width 40 // \brief La largeur du segment qui sera affiché sur l'ecran
 #include <termios.h>
+#include <string>
 #include "Cord.h"
 
 class Input {
@@ -25,6 +26,8 @@ class Input {
 		void printCord(Cord);
 		Cord getTermSize();
 		int inInt();
+		std::string inString(int);
+		std::string inString();
 	private:
 		struct termios* old_tio;
 };
