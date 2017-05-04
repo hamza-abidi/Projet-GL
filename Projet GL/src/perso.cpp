@@ -5,13 +5,16 @@
 #include <string>
 #include <fstream>
 
-#include "../include/perso.h"
+#include "../include/Perso.h"
+#include "../include/ClearSrc.h"
+#include "../include/Input.h"
+
 
 using namespace std;
 
 
 
-Perso::Perso(int line, bool Ia)
+Perso::Perso(int line, bool Ia) : Input() 
 {
 /*	File file ("perso");
 	
@@ -105,7 +108,7 @@ Perso::Perso(int line, bool Ia)
 
 
 
-Perso::Perso()
+Perso::Perso()  : Input() 
 {
 
 	ia=true;
@@ -260,56 +263,67 @@ void Perso::modifPerso()
 		displayClasse();
 		cout<<"modif name ? ";
 		cin>>answer;
+		cout<<endl;
 		if (answer.compare("yes")==0 || answer.compare("y")==0)
 		{
 			cout<<"new name : ";
 			cin>>answer;
+			cout<<endl;
 			modifName(answer);
 			answer="no";
 		}
 		
 		cout<<"modif Pv ? ";
 		cin>>answer;
+		cout<<endl;
 		if (answer.compare("yes")==0 || answer.compare("y")==0)
 		{
 			cout<<"new Pv : ";
 			cin>>answer;
+			cout<<endl;
 			modifPv(atoi(answer.c_str()));
 			answer="no";
 		}
 		
 		cout<<"modif Mana ? ";
 		cin>>answer;
+		cout<<endl;
 		if (answer.compare("yes")==0 || answer.compare("y")==0)
 		{
 			cout<<"new Mana : ";
 			cin>>answer;
+			cout<<endl;
 			modifMana(atoi(answer.c_str()));
 			answer="no";
 		}
 		
 		cout<<"modif Armor ? ";
 		cin>>answer;
+		cout<<endl;
 		if (answer.compare("yes")==0 || answer.compare("y")==0)
 		{
 			cout<<"new Armor : ";
 			cin>>answer;
+			cout<<endl;
 			modifArmor(atoi(answer.c_str()));
 			answer="no";
 		}
 		
 		cout<<"modif skill ? ";
 		cin>>answer;
+		cout<<endl;
 		if (answer.compare("yes")==0 || answer.compare("y")==0)
 		{
 			for (int i=0;i<4;i++)
 			{
 				cout<<"new skill "<<i<<" damage : ";
 				cin>>answer;
+				cout<<endl;
 				modifSkillDam(i,atoi(answer.c_str()));
 				
 				cout<<"new skill "<<i<<" cost : ";
 				cin>>answer;
+				cout<<endl;
 				modifSkillCost(i,atoi(answer.c_str()));
 			}
 
@@ -318,6 +332,7 @@ void Perso::modifPerso()
 		
 		cout<<" modif completed ? ";
 		cin>>answer;
+		cout<<endl;
 	}
 }
 
@@ -402,13 +417,162 @@ void Perso::displayClasse()
 }
 
 
-void Perso::displaySkill()
+int Perso::displaySkill()
 {
-	for (int i=0; i<4; i++)
+/*	for (int i=0; i<4; i++)
 	{
-		cerr<<"skill "<<i<<" : damage : ";cerr<< getSkillDam(i)<<" mana cost : "<<getSkillCost(i)<<endl;
+		cout<<"skill "<<i<<" : damage : "<< getSkillDam(i)<<" mana cost : "<<getSkillCost(i)<<endl;
+	}
+*/
+
+	bool tab [4];
+	tab[0]=1;
+	tab[1]=0;
+	tab[2]=0;
+	tab[3]=0;
+
+	
+	int pointeur=0;
+	char c ='.';
+	
+	int numSize=0;
+	int tmp=0;
+	
+	while (c!=ENTER)
+	{	
+
+
+		
+		clear_screen();
+		displayStat();
+		tmp=0;
+		numSize=0;
+		for (int x=0;x<4;x++)
+		{
+			tmp=numbSize(x);
+			if (tmp>numSize)
+				numSize=tmp;
+		}
+		numSize+=18;
+		
+		for (int x=0;x<4;x++)
+		{
+			displayFrame(tab[x],x,numSize);
+		}
+		
+		c= keyboard();
+		
+		if(c == DOWN) {
+			if( pointeur < 3)
+			{
+				tab[pointeur]=0;
+				pointeur+=1;
+				tab[pointeur]=1;
+			}
+		}
+		else if(c == UP) {
+			if( pointeur > 0)
+			{
+				tab[pointeur]=0;
+				pointeur-=1;
+				tab[pointeur]=1;
+			}
+		}
+
+
+
+	}
+	return pointeur;
+
+}
+
+void Perso::displayFrame(bool choice, int numSkill, int numSize)
+{
+
+	if( choice)
+	{
+		
+		
+		cout<<endl<<"\e["<<31<<"m"<<'|'<<"\e[0m"
+	
+		<<"   dammage : "<<getSkillDam(numSkill)<<"  "	;
+		
+		for (int j=0;j<numSize-(17+damSize(numSkill)); j++)
+		{
+			cout<<" ";
+		}
+		
+		cout<<"\e["<<31<<"m"<<'|'<<endl<<'|'<<"\e[0m"
+	
+		<<"      cost : "<<getSkillCost(numSkill)<<"  ";
+		
+		for (int j=0;j<numSize-(17+costSize(numSkill)); j++)
+		{
+			cout<<" ";
+		}
+		
+		cout<<"\e["<<31<<"m"<<'|'<<endl<<"\e[0m";
+		
+
+	}
+	else
+	{
+		cout<<endl<<'|'		
+		<<"   dammage : "<<getSkillDam(numSkill)<<"  "	;
+		
+		for (int j=0;j<numSize-(17+damSize(numSkill)); j++)
+		{
+			cout<<" ";
+		}
+		
+		cout<<'|'<<endl<<'|'
+		
+		<<"      cost : "<<getSkillCost(numSkill)<<"  ";
+		
+		for (int j=0;j<numSize-(17+costSize(numSkill)); j++)
+		{
+			cout<<" ";
+		}
+		
+
+		cout<<'|'<<endl;
 	}
 }
 
+int Perso::damSize( int numSkill)
+{
+	int dam=getSkillDam(numSkill);
+	int cpt=1;
+	if (dam<0)
+		dam+=1;
+	while(dam>9 || dam<-9)
+	{
+		cpt+=1;
+		dam=dam/10;
+	}
+	return cpt;
+}
 
+int Perso::costSize(int numSkill)
+{
+	int cost=getSkillCost(numSkill);
+	int cpt=1;
+	if (cost<0)
+		cpt+=1;
+	while(cost>9 || cost<-9)
+	{
+		cpt+=1;
+		cost=cost/10;
+	}
+	return cpt;
+}
+int Perso::numbSize( int numSkill)
+{
+	int dam=damSize(numSkill);
+	int cost=costSize(numSkill);
+	
+	if (dam>cost)
+		return dam;
+	return cost;
+}
 
