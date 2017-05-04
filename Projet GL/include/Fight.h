@@ -5,7 +5,7 @@
 /// ... Documentation ...
 ///
 
-#include "perso.h"
+#include "Perso.h"
 
 
 class Fight
