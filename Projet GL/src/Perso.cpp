@@ -1,23 +1,15 @@
-#include <iostream>
-
-#include <stdlib.h>
-
-#include <string>
-#include <fstream>
-
-#include "../include/Perso.h"
 #include "../include/ClearSrc.h"
-#include "../include/Input.h"
+#include "../include/Perso.h"
 
 
 using namespace std;
 
 
 
-Perso::Perso(int line, bool Ia) : Input() 
+Perso::Perso(int line, bool Ia) : Input()
 {
 /*	File file ("perso");
-	
+
 	file.setPosition(line);
 
 	string * perso= file.readWordOfLine('|');
@@ -25,7 +17,7 @@ Perso::Perso(int line, bool Ia) : Input()
 	string *perso= new string [12];
 	if (line==1)
 	{
-	
+
 	perso[0]="bob";	//nom
 	perso[1]="25";	//pv
 	perso[2]="10";	//mana
@@ -39,7 +31,7 @@ Perso::Perso(int line, bool Ia) : Input()
 	perso[10]="10";	//comp4 degat
 	perso[11]="6";	//comp4 mana cost
 	}
-	
+
 	if (line==2)
 	{
 	perso[0]="monst";
@@ -55,7 +47,7 @@ Perso::Perso(int line, bool Ia) : Input()
 	perso[10]="10";
 	perso[11]="6";
 	}
-	
+
 	if (line==3)
 	{
 	perso[0]="yolo";
@@ -71,7 +63,7 @@ Perso::Perso(int line, bool Ia) : Input()
 	perso[10]="8";
 	perso[11]="8";
 	}
-	
+
 
 	ia=Ia;
 	name=perso[0];
@@ -85,30 +77,30 @@ Perso::Perso(int line, bool Ia) : Input()
 	for(int i=0;i<4;i++)
 	{
 		skill[i]=new int [2];
-	} 
+	}
 
 
 	skill[0][0]=atoi (perso[4].c_str());
 	skill[0][1]=atoi (perso[5].c_str());
-	
+
 	skill[1][0]=atoi (perso[6].c_str());
 	skill[1][1]=atoi (perso[7].c_str());
-	
-	
+
+
 	skill[2][0]=atoi (perso[8].c_str());
 	skill[2][1]=atoi (perso[9].c_str());
-	
-	
+
+
 	skill[3][0]=atoi (perso[10].c_str());
 	skill[3][1]=atoi (perso[11].c_str());
-    
+
 
 }
 
 
 
 
-Perso::Perso()  : Input() 
+Perso::Perso()  : Input()
 {
 
 	ia=true;
@@ -116,25 +108,25 @@ Perso::Perso()  : Input()
 	pv=0;
 	mana=0;
 	armor=0;
-	
+
 	skill= new int* [4];
 	for(int i=0;i<4;i++)
 	{
 		skill[i]=new int [2];
-	} 
+	}
 
 	skill[0][0]=0;
 	skill[0][1]=0;
-			
+
 	skill[1][0]=0;
 	skill[1][1]=0;
-			
+
 	skill[2][0]=0;
 	skill[2][1]=0;
-			
+
 	skill[3][0]=0;
 	skill[3][1]=0;
-	
+
 
 }
 
@@ -272,7 +264,7 @@ void Perso::modifPerso()
 			modifName(answer);
 			answer="no";
 		}
-		
+
 		cout<<"modif Pv ? ";
 		cin>>answer;
 		cout<<endl;
@@ -284,7 +276,7 @@ void Perso::modifPerso()
 			modifPv(atoi(answer.c_str()));
 			answer="no";
 		}
-		
+
 		cout<<"modif Mana ? ";
 		cin>>answer;
 		cout<<endl;
@@ -296,7 +288,7 @@ void Perso::modifPerso()
 			modifMana(atoi(answer.c_str()));
 			answer="no";
 		}
-		
+
 		cout<<"modif Armor ? ";
 		cin>>answer;
 		cout<<endl;
@@ -308,7 +300,7 @@ void Perso::modifPerso()
 			modifArmor(atoi(answer.c_str()));
 			answer="no";
 		}
-		
+
 		cout<<"modif skill ? ";
 		cin>>answer;
 		cout<<endl;
@@ -320,7 +312,7 @@ void Perso::modifPerso()
 				cin>>answer;
 				cout<<endl;
 				modifSkillDam(i,atoi(answer.c_str()));
-				
+
 				cout<<"new skill "<<i<<" cost : ";
 				cin>>answer;
 				cout<<endl;
@@ -329,7 +321,7 @@ void Perso::modifPerso()
 
 			answer="no";
 		}
-		
+
 		cout<<" modif completed ? ";
 		cin>>answer;
 		cout<<endl;
@@ -355,12 +347,12 @@ void Perso::regenMana(int Mana)
 	if ( Mana >0)
 	{
 		if (mana+Mana<manaMax)
-		{	
+		{
 			mana+=Mana;
 		}
 		else
 		{
-			regenFullMana();	
+			regenFullMana();
 		}
 	}
 }
@@ -383,7 +375,7 @@ bool Perso::manaCost( int num)
 		return false;
 	}
 	return true;
-	
+
 }
 int Perso::useSkill (int num)
 {
@@ -431,18 +423,18 @@ int Perso::displaySkill()
 	tab[2]=0;
 	tab[3]=0;
 
-	
+
 	int pointeur=0;
 	char c ='.';
-	
+
 	int numSize=0;
 	int tmp=0;
-	
+
 	while (c!=ENT)
-	{	
+	{
 
 
-		
+
 		clear_screen();
 		displayStat();
 		tmp=0;
@@ -454,14 +446,14 @@ int Perso::displaySkill()
 				numSize=tmp;
 		}
 		numSize+=18;
-		
+
 		for (int x=0;x<4;x++)
 		{
 			displayFrame(tab[x],x,numSize);
 		}
-		
+
 		c= keyboard();
-		
+
 		if(c == DOWN) {
 			if( pointeur < 3)
 			{
@@ -491,49 +483,49 @@ void Perso::displayFrame(bool choice, int numSkill, int numSize)
 
 	if( choice)
 	{
-		
-		
+
+
 		cout<<endl<<"\e["<<31<<"m"<<'|'<<"\e[0m"
-	
+
 		<<"   dammage : "<<getSkillDam(numSkill)<<"  "	;
-		
+
 		for (int j=0;j<numSize-(17+damSize(numSkill)); j++)
 		{
 			cout<<" ";
 		}
-		
+
 		cout<<"\e["<<31<<"m"<<'|'<<endl<<'|'<<"\e[0m"
-	
+
 		<<"      cost : "<<getSkillCost(numSkill)<<"  ";
-		
+
 		for (int j=0;j<numSize-(17+costSize(numSkill)); j++)
 		{
 			cout<<" ";
 		}
-		
+
 		cout<<"\e["<<31<<"m"<<'|'<<endl<<"\e[0m";
-		
+
 
 	}
 	else
 	{
-		cout<<endl<<'|'		
+		cout<<endl<<'|'
 		<<"   dammage : "<<getSkillDam(numSkill)<<"  "	;
-		
+
 		for (int j=0;j<numSize-(17+damSize(numSkill)); j++)
 		{
 			cout<<" ";
 		}
-		
+
 		cout<<'|'<<endl<<'|'
-		
+
 		<<"      cost : "<<getSkillCost(numSkill)<<"  ";
-		
+
 		for (int j=0;j<numSize-(17+costSize(numSkill)); j++)
 		{
 			cout<<" ";
 		}
-		
+
 
 		cout<<'|'<<endl;
 	}
@@ -570,9 +562,8 @@ int Perso::numbSize( int numSkill)
 {
 	int dam=damSize(numSkill);
 	int cost=costSize(numSkill);
-	
+
 	if (dam>cost)
 		return dam;
 	return cost;
 }
-

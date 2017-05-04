@@ -1,16 +1,18 @@
 all : lib
 
-lib:  obj/Colors.o obj/fight.o obj/Gameplay.o obj/Input.o obj/main.o obj/ManageFile.o obj/Map.o obj/Menu.o obj/perso.o
-	ar -q lib/librairie.a obj/Colors.o obj/fight.o obj/Gameplay.o obj/Input.o obj/ManageFile.o obj/Map.o obj/Menu.o obj/perso.o 
-	g++ -std=c++11 -o bin/Executable src/main.cpp src/Colors.cpp src/fight.cpp src/Gameplay.cpp src/Input.cpp src/ManageFile.cpp src/Map.cpp src/Menu.cpp src/perso.cpp  -L /usr/include/SFML -lsfml-graphics -lsfml-window -lsfml-system lib/librairie.a
+lib:  obj/ClearSrc.o obj/Colors.o obj/Fight.o obj/Gameplay.o obj/Input.o obj/main.o obj/ManageFile.o obj/Map.o obj/Menu.o obj/Perso.o
+	ar -q lib/librairie.a obj/ClearSrc.o obj/Colors.o obj/Fight.o obj/Gameplay.o obj/Input.o obj/ManageFile.o obj/Map.o obj/Menu.o obj/Perso.o 
+	g++ -std=c++11 -o bin/Executable src/main.cpp src/ClearSrc.cpp src/Colors.cpp src/Fight.cpp src/Gameplay.cpp src/Input.cpp src/ManageFile.cpp src/Map.cpp src/Menu.cpp src/Perso.cpp  -L /usr/include/SFML -lsfml-graphics -lsfml-window -lsfml-system lib/librairie.a
 
 obj/main.o :  src/main.cpp
 	g++ -std=c++11 -o obj/main.o -c src/main.cpp
 
+obj/ClearSrc.o : src/ClearSrc.cpp
+	g++ -std=c++11 -o obj/ClearSrc.o -c src/ClearSrc.cpp
 obj/Colors.o : src/Colors.cpp
 	g++ -std=c++11 -o obj/Colors.o -c src/Colors.cpp
-obj/fight.o : src/fight.cpp
-	g++ -std=c++11 -o obj/fight.o -c src/fight.cpp
+obj/Fight.o : src/Fight.cpp
+	g++ -std=c++11 -o obj/Fight.o -c src/Fight.cpp
 obj/Gameplay.o : src/Gameplay.cpp
 	g++ -std=c++11 -o obj/Gameplay.o -c src/Gameplay.cpp
 obj/Input.o : src/Input.cpp
@@ -21,8 +23,8 @@ obj/Map.o : src/Map.cpp
 	g++ -std=c++11 -o obj/Map.o -c src/Map.cpp
 obj/Menu.o : src/Menu.cpp
 	g++ -std=c++11 -o obj/Menu.o -c src/Menu.cpp
-obj/perso.o : src/perso.cpp
-	g++ -std=c++11 -o obj/perso.o -c src/perso.cpp
+obj/Perso.o : src/Perso.cpp
+	g++ -std=c++11 -o obj/Perso.o -c src/Perso.cpp
 
 clean:
 	rm -rf obj/*.o

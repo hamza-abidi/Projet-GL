@@ -1,4 +1,7 @@
 #include "../include/Map.h"
+#include "../include/ClearSrc.h"
+
+
 using namespace std ;
 
 Map::Map(string nameMap) : Colors(){
@@ -26,13 +29,16 @@ Map::~Map(){
   delete* matrixMap ;
 }
 
-int Map::move(Cord cord , char moving){
-  if((cord.y - beginIndex) == segment_width){
+int Map::move(Cord cord , char moving ){
+  if((cord.y - beginIndex) == segment_width && matrixMap[cord.x][cord.y+1].c != 'e' && matrixMap[cord.x][cord.y].c != 'a'){
     beginIndex = cord.y ;
     cout << "\033[0;0H";
     display(cord);
     cout << "\033["<<cord.x+1<<";"<<0<<"H";
-    return MOVE;
+    if(matrixMap[cord.x][cord.y].monster)
+      return MONSTER ;
+    else
+      return MOVE;
   }
   else if(cord.y < window_width && cord.x < window_height && cord.y >= 0 && cord.x >= 0){
     if(matrixMap[cord.x][cord.y].c != 'e' && matrixMap[cord.x][cord.y].c != 'a' ){
@@ -41,7 +47,10 @@ int Map::move(Cord cord , char moving){
         cout << "\033[0;0H";
         display(cord);
         cout << "\033["<<cord.x+1<<";"<<segment_width<<"H";
-        return MOVE;
+        if(matrixMap[cord.x][cord.y].monster)
+          return MONSTER ;
+        else
+          return MOVE;
       }
       switch (moving) {
         case 'A': cout << "\033[A" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[B" ;break;
@@ -56,16 +65,14 @@ int Map::move(Cord cord , char moving){
         case 'C': cout << "\033[C" ;break;
         case 'D': cout << "\033[D" ;break;
       }
-      return MOVE;
-    }
-    else{
       if(matrixMap[cord.x][cord.y].monster)
         return MONSTER ;
       else
-        return BLOCK;
+        return MOVE;
     }
+    else
+      return BLOCK;
   }
-  return BLOCK;
 }
 
 void Map::display(Cord cord){

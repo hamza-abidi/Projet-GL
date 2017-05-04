@@ -18,7 +18,6 @@
 #include <iostream>
 #include <time.h>
 #include "ManageFile.h"
-// #include "ClearSrc.h"
 
 #define window_width 121 // \brief La largeur maximale de la map (la longueur des lignes du fichier texte qui represente la map)
 #define window_height 21 // \brief La hauteur maximale de la map (le nombre des lignes du fichier texte qui represente la map)

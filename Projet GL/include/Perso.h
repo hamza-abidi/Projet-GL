@@ -7,8 +7,11 @@
 
 #ifndef PERSO_H
 #define PERSO_H
+#include "Input.h"
+#include <iostream>
+#include <stdlib.h>
 
-#include "../include/Input.h"
+
 
 
 class Perso : Input
@@ -22,15 +25,15 @@ class Perso : Input
 		int manaMax;
 		int armor;
 		int ** skill;		//skill[][0]=damage skill[][1]=cost
-		
+
 	public:
 		Perso();
-		
+
 		Perso(int line, bool Ia);
-		
+
 		Perso(int line, int x, int y);
 		~Perso();
-		
+
 		bool isIa();
 		std::string getName();
 		int getPv();
@@ -40,7 +43,7 @@ class Perso : Input
 		int getArmor();
 		int getSkillDam(int);
 		int getSkillCost(int);
-		
+
 		void modifPerso();
 		void modifName(std::string newName);
 		void modifPv(int);
@@ -48,28 +51,27 @@ class Perso : Input
 		void modifArmor(int);
 		void modifSkillDam(int num, int newDam);
 		void modifSkillCost(int num, int newCost);
-		
+
 		void regenPv(int);
 		void regenMana(int);
-		
+
 		void regenFullPv();
 		void regenFullMana();
-		
+
 		bool manaCost( int num);
-		
+
 		int useSkill (int);		//reduit le mana et retourne les degats
 		void takeDamage (int);	//inflige les degats compte de l'armure
-		
+
 		void displayStat();
 		void displayClasse();
 
 		int displaySkill();
 		void displayFrame(bool choice, int numSkill, int numSize);
-		
+
 		int numbSize( int numSkill);
 		int costSize(int numSkill);
 		int damSize( int numSkill);
-		
 
 };
 

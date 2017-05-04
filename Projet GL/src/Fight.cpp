@@ -1,13 +1,4 @@
-#include <iostream>
-
-#include <stdlib.h>
-
-#include <string>
-#include <fstream>
-#include <time.h>
-
 #include "../include/Fight.h"
-#include "../include/Perso.h"
 
 
 using namespace std;
@@ -16,48 +7,48 @@ using namespace std;
 	{
 		numbOfEntity=numbOfEntityC;
 		entity= entityC;
-		
+
 		turn=0;
 	}
-	
+
 	Fight::~Fight()
 	{
 		delete [] entity;
 	}
-	
-	void Fight::battle()
+
+	void Fight::startBattle()
 	{
 		int damage=0;
 		turn-=1;
 		while ( onlyOneFighter()==false)
 		{
 		cout<<endl<<endl;
-						
-			
+
+
 			turn=(turn+1)%numbOfEntity;
 			while (entity[turn].getPv()<1)
 			{
 				turn=(turn+1)%numbOfEntity;
 			}
-			
+
 			cout<<"tour du joueur "<<turn<<" : "<<endl<<endl;
 			entity[turn].displayStat();
 			damage=chooseSkill();
-			
+
 			if (damage<=0)
 			{
 				entity[turn].takeDamage(damage);
 			}
 			else
-			{	
+			{
 				chooseFighter(damage);
 			}
 
-			
+
 			cout<<endl<<endl;
 
 		}
-		
+
 		cout<< " the winner is : "<<turn<<endl;
 	}
 
@@ -75,10 +66,10 @@ using namespace std;
 			skillNum=entity[turn].displaySkill();  //---------------------
 	//		cout<<endl;
 	//		skillNum=manualChooseSkill();  //-----------------------interface
-		}	
-		
+		}
 
-		
+
+
 		if (entity[turn].manaCost(skillNum)==false)
 		{
 			cout<<" no enought mana : "<<entity[turn].getMana()<<endl;
@@ -90,12 +81,12 @@ using namespace std;
 			return entity[turn].useSkill (skillNum);
 		}
 	}
-	
-	
+
+
 	bool Fight::onlyOneFighter()
 	{
 		int cpt=0;
-						
+
 		for (int i=0; i<numbOfEntity; i++)
 		{
 			if (entity[i].getPv() >0)
@@ -105,17 +96,17 @@ using namespace std;
 			}
 			else
 				cout<<"joueur "<<i<<" mort"<<endl;
-	
+
 		}
 		if (cpt >= 2)
 			{
 				return false;
 			}
 		return true;
-		
+
 	}
-	
-	
+
+
 	void Fight::chooseFighter(int damage)
 	{
 		int target=turn;
@@ -132,12 +123,12 @@ using namespace std;
 			{
 				target=manualChooseTarget();
     //-----------------------interface
-			}	
+			}
 		}
 		else
 		{
 			target=(turn+1)%numbOfEntity;
-		}	
+		}
 			      //--------------------------------------interface
 			if (entity[target].getPv()<1)
 			{
@@ -150,20 +141,20 @@ using namespace std;
 		cout<<"combat : "<<entity[target].getPv()<<endl;
 		//------------------------------------------------------------
 	}
-	
-	
+
+
 	int Fight::autoChooseTarget()
 	{
 		srand(time(NULL));
 		return rand()%(numbOfEntity);
 	}
-	
+
 	int Fight::autoChooseSkill()
 	{
 		srand(time(NULL));
 		return rand()%(4);
 	}
-	
+
 	int Fight::manualChooseTarget()
 	{
 		int choice;
@@ -178,7 +169,7 @@ using namespace std;
 		}
 		return choice;
 	}
-	
+
 	int Fight::manualChooseSkill()
 	{
 		int choice;
@@ -192,7 +183,3 @@ using namespace std;
 		}
 		return choice;
 	}
-
-
-	
-	

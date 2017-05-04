@@ -114,7 +114,7 @@ int Input::inInt(){
 	int i = 0;
 	int a =  0;
 	unsigned char c = getchar();
-	
+
 	while(c != ENT) {
 		if(i == 0 && c == '-') {
 			negative = true;
@@ -146,7 +146,7 @@ std::string Input::inString(int l) {
 	int i = 0;
 	std::string s;
 	unsigned char c = getchar();
-	
+
 	while(c != ENT){
 		if(i < l && c >= ' ' && c <= '~') {
 			printf("%c",c);
@@ -167,7 +167,7 @@ std::string Input::inString() {
 	int i = 0;
 	std::string s;
 	unsigned char c = getchar();
-	
+
 	while(c != ENT){
 		if(c >= ' ' && c <= '~') {
 			printf("%c",c);

@@ -108,15 +108,17 @@ void Menu::parametresJeu(){
    }
 
    std::cout << '\n'<< '\n'<< '\n'<< '\n'<< '\n';
-   for(int i = 0 ; i < nbJoueurs ; i++){
-     if(choix == 1 && indJoueur == i){
-      color.setColorText(joueurs[i][0]+"    ",'R');
+   for(int k = 0 ; k < 4 ; k++){
+     for(int i = 0 ; i < nbJoueurs ; i++){
+       if(choix == 1 && indJoueur == i){
+        color.setColorText("Nom:   "+joueurs[i][k]+"  ",'R');
+       }
+       else{
+           std::cout <<"| "<< joueurs[i][k] << "  ";
+       }
      }
-     else{
-         std::cout << joueurs[i][0] << "    ";
-     }
-   }
-
+     std::cout << '\n';
+  }
    c = keyboard();
 
   switch(c){

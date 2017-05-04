@@ -2,7 +2,6 @@
 #define _MENU_H_
 #include "Input.h"
 #include "Colors.h"
-//#include "ClearSrc.h"
 #include "ManageFile.h"
 #include "Gameplay.h"
 #include <dirent.h>
