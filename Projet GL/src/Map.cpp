@@ -6,16 +6,22 @@ using namespace std ;
 
 Map::Map(string nameMap) : Colors(){
   map = nameMap ;
+  int r = 50;
+  srand(time(0));
   beginIndex = monstersNumber = 0;
   matrixMap = new Case*[window_height];
   ManageFile file(nameMap , "r");
-  srand(time(NULL));
   for (int  i = 0 ; i < window_height ; i++){
   	matrixMap[i] = new Case[window_width];
   	for(int j = 0 ; j < window_width ; j++){
   		matrixMap[i][j].c = file.readChar();
       if(matrixMap[i][j].c == 'h'){
-        matrixMap[i][j].monster = rand()%1;
+        r = rand()%100;
+        if(r == rand()%100)
+          matrixMap[i][j].monster = true;
+        else
+          matrixMap[i][j].monster = false ;
+
         if(matrixMap[i][j].monster == true)
           monstersNumber++;
       }
@@ -23,6 +29,7 @@ Map::Map(string nameMap) : Colors(){
         matrixMap[i][j].monster = false ;
   	}
   }
+  //std::cout << "monstersNumber = " <<monstersNumber<< '\n';
 }
 
 Map::~Map(){
@@ -31,57 +38,65 @@ Map::~Map(){
 
 int Map::move(Cord cord , char moving ){
   if((cord.y - beginIndex) == segment_width && matrixMap[cord.x][cord.y+1].c != 'e' && matrixMap[cord.x][cord.y].c != 'a'){
-    beginIndex = cord.y ;
+    beginIndex += segment_width ;
     cout << "\033[0;0H";
     display(cord);
     cout << "\033["<<cord.x+1<<";"<<0<<"H";
-    if(matrixMap[cord.x][cord.y].monster)
+    if(matrixMap[cord.x][cord.y].monster){
+      matrixMap[cord.x][cord.y].monster = false;
+      monstersNumber--;
       return MONSTER ;
+    }
     else
       return MOVE;
+
   }
   else if(cord.y < window_width && cord.x < window_height && cord.y >= 0 && cord.x >= 0){
     if(matrixMap[cord.x][cord.y].c != 'e' && matrixMap[cord.x][cord.y].c != 'a' ){
+      bool changeMap = false;
       if(cord.y < beginIndex && beginIndex != 0){
         beginIndex -= segment_width ;
         cout << "\033[0;0H";
         display(cord);
         cout << "\033["<<cord.x+1<<";"<<segment_width<<"H";
-        if(matrixMap[cord.x][cord.y].monster)
-          return MONSTER ;
-        else
-          return MOVE;
-      }
+        changeMap = true;
+      }if(changeMap == false){
       switch (moving) {
         case 'A': cout << "\033[A" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[B" ;break;
         case 'B': cout << "\033[B" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[A" ;break;
         case 'C': cout << "\033[C" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[D" ;break;
         case 'D': cout << "\033[D" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[C" ;break;
       }
-      displayColor(" ",'V');cout << "\033[D" ;
+
+        displayColor(" ",'V');cout << "\033[D" ;
       switch (moving) {
         case 'A': cout << "\033[A" ;break;
         case 'B': cout << "\033[B" ;break;
         case 'C': cout << "\033[C" ;break;
         case 'D': cout << "\033[D" ;break;
       }
-      if(matrixMap[cord.x][cord.y].monster)
+    }
+      if(matrixMap[cord.x][cord.y].monster){
+        monstersNumber--;
+        matrixMap[cord.x][cord.y].monster = false;
         return MONSTER ;
+      }
       else
         return MOVE;
     }
-    else
-      return BLOCK;
   }
+  return BLOCK;
 }
 
 void Map::display(Cord cord){
-	//clear_screen();
+	clear_screen();
 	for (int  i = 0 ; i < window_height ; i++){
 		for(int j = beginIndex ; j < beginIndex+segment_width; j++){
   			switch(matrixMap[i][j].c){
   				case 'h' : {
-            if(cord.x != i || cord.y != j)
+            if(matrixMap[i][j].monster)
+              displayColor("M",'V');
+            else if(cord.x != i || cord.y != j)
               displayColor(" ",'V');
              else
                displayColor("T",'V');
