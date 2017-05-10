@@ -1,6 +1,4 @@
-#include "../include/ClearSrc.h"
 #include "../include/Perso.h"
-
 
 using namespace std;
 
@@ -8,62 +6,26 @@ using namespace std;
 
 Perso::Perso(int line, bool Ia) : Input()
 {
-/*	File file ("perso");
-
-	file.setPosition(line);
-
-	string * perso= file.readWordOfLine('|');
-*/
-	string *perso= new string [12];
-	if (line==1)
+	if (Ia==false)
 	{
+		ManageFile file ("../personnages/personnages.txt","r");
 
-	perso[0]="bob";	//nom
-	perso[1]="25";	//pv
-	perso[2]="10";	//mana
-	perso[3]="0";	//armor
-	perso[4]="1";	//comp1 degat
-	perso[5]="-1";	//comp1 mana cost
-	perso[6]="4";	//comp2 degat
-	perso[7]="4";	//comp2	mana cost
-	perso[8]="7";	//comp3 degat
-	perso[9]="5";	//comp3 mana cost
-	perso[10]="10";	//comp4 degat
-	perso[11]="6";	//comp4 mana cost
+		file.setPosition(line);
+
+		perso= new string [12];
+		perso= file.readWordsOfLine('|');
+		file.close();
 	}
-
-	if (line==2)
+	else
 	{
-	perso[0]="monst";
-	perso[1]="20";
-	perso[2]="10";
-	perso[3]="1";
-	perso[4]="1";
-	perso[5]="0";
-	perso[6]="4";
-	perso[7]="4";
-	perso[8]="7";
-	perso[9]="5";
-	perso[10]="10";
-	perso[11]="6";
-	}
+		ManageFile file ("../personnages/monstres.txt","r");
 
-	if (line==3)
-	{
-	perso[0]="yolo";
-	perso[1]="16";
-	perso[2]="10";
-	perso[3]="3";
-	perso[4]="1";
-	perso[5]="-1";
-	perso[6]="4";
-	perso[7]="4";
-	perso[8]="6";
-	perso[9]="6";
-	perso[10]="8";
-	perso[11]="8";
-	}
+		file.setPosition(line);
 
+		perso= new string [12];
+		perso= file.readWordsOfLine('|');
+		file.close();
+	}
 
 	ia=Ia;
 	name=perso[0];
@@ -132,7 +94,8 @@ Perso::Perso()  : Input()
 
 Perso::~Perso()
 {
-	delete * skill ;
+	//delete * skill ;
+	//delete perso;
 }
 
 bool Perso::isIa()
@@ -254,67 +217,67 @@ void Perso::modifPerso()
 	{
 		displayClasse();
 		cout<<"modif name ? ";
-		cin>>answer;
+		answer=inString();
 		cout<<endl;
 		if (answer.compare("yes")==0 || answer.compare("y")==0)
 		{
 			cout<<"new name : ";
-			cin>>answer;
+			answer=inString();
 			cout<<endl;
 			modifName(answer);
 			answer="no";
 		}
 
 		cout<<"modif Pv ? ";
-		cin>>answer;
+		answer=inString();
 		cout<<endl;
 		if (answer.compare("yes")==0 || answer.compare("y")==0)
 		{
 			cout<<"new Pv : ";
-			cin>>answer;
+			answer=inString();
 			cout<<endl;
 			modifPv(atoi(answer.c_str()));
 			answer="no";
 		}
 
 		cout<<"modif Mana ? ";
-		cin>>answer;
+		answer=inString();
 		cout<<endl;
 		if (answer.compare("yes")==0 || answer.compare("y")==0)
 		{
 			cout<<"new Mana : ";
-			cin>>answer;
+			answer=inString();
 			cout<<endl;
 			modifMana(atoi(answer.c_str()));
 			answer="no";
 		}
 
 		cout<<"modif Armor ? ";
-		cin>>answer;
+		answer=inString();
 		cout<<endl;
 		if (answer.compare("yes")==0 || answer.compare("y")==0)
 		{
 			cout<<"new Armor : ";
-			cin>>answer;
+			answer=inString();
 			cout<<endl;
 			modifArmor(atoi(answer.c_str()));
 			answer="no";
 		}
 
 		cout<<"modif skill ? ";
-		cin>>answer;
+		answer=inString();
 		cout<<endl;
 		if (answer.compare("yes")==0 || answer.compare("y")==0)
 		{
 			for (int i=0;i<4;i++)
 			{
 				cout<<"new skill "<<i<<" damage : ";
-				cin>>answer;
+				answer=inString();
 				cout<<endl;
 				modifSkillDam(i,atoi(answer.c_str()));
 
 				cout<<"new skill "<<i<<" cost : ";
-				cin>>answer;
+				answer=inString();
 				cout<<endl;
 				modifSkillCost(i,atoi(answer.c_str()));
 			}
@@ -323,7 +286,7 @@ void Perso::modifPerso()
 		}
 
 		cout<<" modif completed ? ";
-		cin>>answer;
+		answer=inString();
 		cout<<endl;
 	}
 }
@@ -385,16 +348,41 @@ int Perso::useSkill (int num)
 
 void Perso::takeDamage (int dam)
 {
-	if (dam<0)
+	//if (dam<0)
 		pv-=dam;
-	else if ( dam-armor > 0)
-		pv-= dam-armor;
+//	else if ( dam-armor > 0)
+	//	pv-= dam-armor;
 }
 
 
 void Perso::displayStat()
 {
-	cout<<" name : "<<name<<" | pv : "<<pv<<" | mana  : "<<mana<<" | armor : "<<armor<<endl;
+	Colors color ;
+	Cord cur = getCursorPosition();
+	Cord cord = cur;
+	color.displayColor(" name : "+name+'\n','V');
+	cord.x++;
+	setCursorPosition(cord);
+	color.displayColor(" PV   : ",'V');
+	for(int i = 0 ; i<pv;i++){
+		color.displayColor("+",'V');
+	}
+	cout<<endl;
+	cord.x++;
+	setCursorPosition(cord);
+	color.displayColor(" Mana : ",'V');
+	for(int i = 0 ; i<mana;i++){
+		color.displayColor("+",'V');
+	}
+	cout<<endl;
+	cord.x++;
+	setCursorPosition(cord);
+	color.displayColor(" Armor: ",'V');
+	for(int i = 0 ; i<armor;i++){
+		color.displayColor("+",'V');
+	}
+	cout<<endl;
+	setCursorPosition(cur);
 }
 
 void Perso::displayClasse()

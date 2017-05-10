@@ -1,31 +1,32 @@
-#ifndef __FIGHT_H__
-#define __FIGHT_H__
+// \autor Gautier Bastien
+// \date 22 avril 2017
 
-#include <iostream>
+///
+/// ... Documentation ...
+///
 
-#include <stdlib.h>
-
-#include <string>
-#include <fstream>
-#include <time.h>
-
-#include "Input.h"
 #include "Perso.h"
-
+#include "Colors.h"
+#include "Map.h"
 
 class Fight : Input{
 	private:
-		Perso* entity;		//tableau de toutes les entités dans ce combat
+		Perso* monstres ;
+		Perso monstre;
+		Perso joueur;
+		int nbMonstres;
+
+		Map* terain ;
 		int numbOfEntity;
 		int turn;			// loto, à qui le tour
 
 
 	public:
 
-		Fight (Perso*, int);
+		Fight (Perso perso , Perso* monstre, int numbOfEntityC);
 		~Fight();
 
-		void startBattle();			//appel tout
+		bool startBattle();		//initalise le combat
 
 		bool onlyOneFighter();	//vefifie si le combat est fini (=true)
 
@@ -38,7 +39,8 @@ class Fight : Input{
 
 		int manualChooseTarget();
 		int manualChooseSkill();
+
+		void InitialisationBattleDisplay();
+		void displayAttack(Cord,Cord,string);
+		void displayOnCord(Cord,string);
 };
-
-
-#endif

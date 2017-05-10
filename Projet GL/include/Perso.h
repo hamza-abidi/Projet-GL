@@ -7,17 +7,27 @@
 
 #ifndef PERSO_H
 #define PERSO_H
-#include "Input.h"
+
+
 #include <iostream>
+
 #include <stdlib.h>
 
+#include <string>
+#include <fstream>
 
+
+#include "ClearSrc.h"
+#include "Input.h"
+#include "ManageFile.h"
+#include "Colors.h"
 
 
 class Perso : Input
 {
 	private:
 		bool ia;
+		string* perso;
 		std::string name;
 		int pv;
 		int pvMax;
@@ -72,6 +82,7 @@ class Perso : Input
 		int numbSize( int numSkill);
 		int costSize(int numSkill);
 		int damSize( int numSkill);
+
 
 };
 

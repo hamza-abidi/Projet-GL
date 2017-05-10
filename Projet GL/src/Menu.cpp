@@ -180,7 +180,7 @@ void Menu::parametresJeu(){
  }
  map = indMap ;
  personnage = indJoueur;
- Gameplay gameplay(maps[map]);
+ Gameplay gameplay("../maps/"+maps[map],indJoueur);
  gameplay.play();
 }
 

@@ -2,7 +2,7 @@
 using namespace std ;
 
 ManageFile::ManageFile(string name , string type){
-  nameFile = map_directory+name ;
+  nameFile = name ;
   this->type = type;
     if(this->type == "r") file.open(nameFile , ios::in);
     else if(this->type == "w") file.open(nameFile , ios::out);
@@ -39,6 +39,7 @@ long ManageFile::getSize(){
 
 int ManageFile::getNumberLines(){
   if(file.is_open()){
+    file.clear();
     int size = 0 ;
       int positionInitiale = file.gcount();
       begin();
@@ -171,7 +172,6 @@ string* ManageFile::readWordsOfLine(char separateur){
         tmps += s[i];
       }
       else{
-        std::cout << tmps << '\n';
         tmp[j] = tmps ;
         j++;
         tmps = "";

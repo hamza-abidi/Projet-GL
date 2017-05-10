@@ -30,7 +30,7 @@
 class Map : public Colors  {
   public :
     /// \brief initialiser la map avec un le nom d'un fichier texte qui contient les éléments de la map
-    Map(string map);
+    Map(string map,bool = true);
 
     /// \brief Désallocation de la memoire
     ~Map();
@@ -39,7 +39,7 @@ class Map : public Colors  {
     int move(Cord,char);
 
     /// \brief afficher la map
-    void display(Cord);
+    void display(Cord = {-1,-1});
 
     /// \brief récuperer la largeur de la map
     int getWidth();
@@ -52,6 +52,8 @@ class Map : public Colors  {
 
     /// \brief retourne vrai si on peut accéder a une case donnée
     bool accessible(Cord);
+
+    void monsterDied(Cord);
   private:
     string map;
     int monstersNumber ;

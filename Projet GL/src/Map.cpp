@@ -4,7 +4,7 @@
 
 using namespace std ;
 
-Map::Map(string nameMap) : Colors(){
+Map::Map(string nameMap , bool widthMonsters) : Colors(){
   map = nameMap ;
   int r = 50;
   srand(time(0));
@@ -15,7 +15,7 @@ Map::Map(string nameMap) : Colors(){
   	matrixMap[i] = new Case[window_width];
   	for(int j = 0 ; j < window_width ; j++){
   		matrixMap[i][j].c = file.readChar();
-      if(matrixMap[i][j].c == 'h'){
+      if(matrixMap[i][j].c == 'h' && widthMonsters){
         r = rand()%100;
         if(r == rand()%100)
           matrixMap[i][j].monster = true;
@@ -29,7 +29,6 @@ Map::Map(string nameMap) : Colors(){
         matrixMap[i][j].monster = false ;
   	}
   }
-  //std::cout << "monstersNumber = " <<monstersNumber<< '\n';
 }
 
 Map::~Map(){
@@ -42,11 +41,8 @@ int Map::move(Cord cord , char moving ){
     cout << "\033[0;0H";
     display(cord);
     cout << "\033["<<cord.x+1<<";"<<0<<"H";
-    if(matrixMap[cord.x][cord.y].monster){
-      matrixMap[cord.x][cord.y].monster = false;
-      monstersNumber--;
+    if(matrixMap[cord.x][cord.y].monster)
       return MONSTER ;
-    }
     else
       return MOVE;
 
@@ -76,11 +72,8 @@ int Map::move(Cord cord , char moving ){
         case 'D': cout << "\033[D" ;break;
       }
     }
-      if(matrixMap[cord.x][cord.y].monster){
-        monstersNumber--;
-        matrixMap[cord.x][cord.y].monster = false;
+      if(matrixMap[cord.x][cord.y].monster)
         return MONSTER ;
-      }
       else
         return MOVE;
     }
@@ -88,7 +81,7 @@ int Map::move(Cord cord , char moving ){
   return BLOCK;
 }
 
-void Map::display(Cord cord){
+void Map::display(Cord cord ){
 	clear_screen();
 	for (int  i = 0 ; i < window_height ; i++){
 		for(int j = beginIndex ; j < beginIndex+segment_width; j++){
@@ -127,4 +120,9 @@ void Map::display(Cord cord){
 
   bool Map::accessible(Cord cord){
     return !matrixMap[cord.x][cord.y].monster && matrixMap[cord.x][cord.y].c != 'e' && matrixMap[cord.x][cord.y].c != 'a';
+  }
+
+  void Map::monsterDied(Cord cord){
+    matrixMap[cord.x][cord.y].monster = false;
+    monstersNumber--;
   }
