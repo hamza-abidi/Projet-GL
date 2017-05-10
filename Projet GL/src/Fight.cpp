@@ -19,7 +19,7 @@ using namespace std;
 		joueur = perso;
 		nbMonstres = numberOfMonsters;
 
-		terain = new Map("../maps/terainDesCombats.txt",false);
+		terrain = new Map("../maps/terrainDesCombats.txt",false);
 		turn=0;
 	}
 
@@ -35,7 +35,7 @@ using namespace std;
 		monstre = monstres[indMonstre]; // on choisi un monstre aléatoirement
 
 		setCursorPosition({0,0});
-		terain->display();
+		terrain->display();
 		InitialisationBattleDisplay();
 
 		bool tour = true; // true : le joueur qui attaque , false le monstre qu'il attaque
@@ -48,7 +48,7 @@ using namespace std;
 							displayAttack({window_height/2,1},{window_height/2,segment_width-1},"->");
 							monstre.takeDamage(1);
 							setCursorPosition({0,0});
-							terain->display();
+							terrain->display();
 							InitialisationBattleDisplay();
 							tour = false;
 						break;
@@ -59,7 +59,7 @@ using namespace std;
 				displayAttack({window_height/2,segment_width-1},{window_height/2,1},"<-");
 				joueur.takeDamage(1);
 				setCursorPosition({0,0});
-				terain->display();
+				terrain->display();
 				InitialisationBattleDisplay();
 				 tour = true ;
 			}

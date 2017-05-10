@@ -16,7 +16,7 @@ class Fight : Input{
 		Perso joueur;
 		int nbMonstres;
 
-		Map* terain ;
+		Map* terrain ;
 		int numbOfEntity;
 		int turn;			// loto, à qui le tour
 
