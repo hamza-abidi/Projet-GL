@@ -34,6 +34,7 @@ Perso::Perso(int line, bool Ia) : Input()
  	mana=atoi (perso[2].c_str());
  	manaMax=mana;
  	armor=atoi (perso[3].c_str());
+ 	armorMax=armor;
 
 	skill= new int *[4];
 	for(int i=0;i<4;i++)
@@ -364,22 +365,31 @@ void Perso::displayStat()
 	cord.x++;
 	setCursorPosition(cord);
 	color.displayColor(" PV   : ",'V');
-	for(int i = 0 ; i<pv;i++){
-		color.displayColor("+",'V');
+	for(int i = 0 ; i<pvMax;i++){
+		if(i<pv)
+			color.displayColor("+",'V');
+		else
+			color.displayColor(" ",'V');
 	}
 	cout<<endl;
 	cord.x++;
 	setCursorPosition(cord);
 	color.displayColor(" Mana : ",'V');
-	for(int i = 0 ; i<mana;i++){
-		color.displayColor("+",'V');
+	for(int i = 0 ; i<manaMax;i++){
+		if(i<mana)
+			color.displayColor("+",'V');
+		else
+			color.displayColor(" ",'V');
 	}
 	cout<<endl;
 	cord.x++;
 	setCursorPosition(cord);
 	color.displayColor(" Armor: ",'V');
-	for(int i = 0 ; i<armor;i++){
-		color.displayColor("+",'V');
+	for(int i = 0 ; i<armorMax;i++){
+		if(i<armor)
+			color.displayColor("+",'V');
+		else
+			color.displayColor(" ",'V');
 	}
 	cout<<endl;
 	setCursorPosition(cur);

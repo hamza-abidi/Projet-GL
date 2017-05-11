@@ -35,9 +35,11 @@ using namespace std;
 		monstre = monstres[indMonstre]; // on choisi un monstre aléatoirement
 
 		setCursorPosition({0,0});
+		joueur.regenFullPv();
+		joueur.regenFullMana();
 		terrain->display();
 		InitialisationBattleDisplay();
-
+		
 		bool tour = true; // true : le joueur qui attaque , false le monstre qu'il attaque
 		char c ;
 		while(monstre.getPv() != 0 && joueur.getPv() != 0 ){
@@ -47,8 +49,6 @@ using namespace std;
 					case ENT:
 							displayAttack({window_height/2,1},{window_height/2,segment_width-1},"->");
 							monstre.takeDamage(1);
-							setCursorPosition({0,0});
-							terrain->display();
 							InitialisationBattleDisplay();
 							tour = false;
 						break;
@@ -58,8 +58,6 @@ using namespace std;
 				setSleep(10);
 				displayAttack({window_height/2,segment_width-1},{window_height/2,1},"<-");
 				joueur.takeDamage(1);
-				setCursorPosition({0,0});
-				terrain->display();
 				InitialisationBattleDisplay();
 				 tour = true ;
 			}

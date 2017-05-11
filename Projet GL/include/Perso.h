@@ -34,6 +34,7 @@ class Perso : Input
 		int mana;
 		int manaMax;
 		int armor;
+		int armorMax;
 		int ** skill;		//skill[][0]=damage skill[][1]=cost
 
 	public:
