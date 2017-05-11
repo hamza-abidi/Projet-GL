@@ -39,6 +39,7 @@ void Gameplay::play() {
 	cout << "\033["<<player.x+1<<";"<<player.y+1<<"H";
 	char c ;
 	int radar;
+	Cord cur ;
 	while(true) {
 		c = keyboard();
 		if(c == UP) {
@@ -47,11 +48,12 @@ void Gameplay::play() {
 			radar = map->move(player, moving);
 			if(radar == BLOCK) player.x += 1;
 			else if(radar == MONSTER){
+				cur = getCursorPosition();
 				if(fight->startBattle()){
 					map->monsterDied(player);
 					setCursorPosition({0,0});
 					map->display(player);
-					setCursorPosition({player.x+1,player.y+1});
+					setCursorPosition(cur);
 				}
 				else{
 					clear_screen();
@@ -67,11 +69,12 @@ void Gameplay::play() {
 			radar = map->move(player, moving);
 			if(radar == BLOCK) player.x -= 1;
 			else if(radar == MONSTER){
+				cur = getCursorPosition();
 				if(fight->startBattle()){
 					map->monsterDied(player);
 					setCursorPosition({0,0});
 					map->display(player);
-					setCursorPosition({player.x+1,player.y+1});
+					setCursorPosition(cur);
 				}
 				else{
 					clear_screen();
@@ -87,11 +90,12 @@ void Gameplay::play() {
 			radar = map->move(player, moving);
 			if(radar == BLOCK) player.y -= 1;
 			else if(radar == MONSTER){
+				cur = getCursorPosition();
 				if(fight->startBattle()){
 					map->monsterDied(player);
 					setCursorPosition({0,0});
 					map->display(player);
-					setCursorPosition({player.x+1,player.y+1});
+					setCursorPosition(cur);
 				}
 				else{
 					clear_screen();
@@ -107,11 +111,12 @@ void Gameplay::play() {
 			radar = map->move(player, moving);
 			if(radar == BLOCK) player.y += 1;
 			else if(radar == MONSTER){
+				cur = getCursorPosition();
 				if(fight->startBattle()){
 					map->monsterDied(player);
 					setCursorPosition({0,0});
 					map->display(player);
-					setCursorPosition({player.x+1,player.y+1});
+					setCursorPosition(cur);
 				}
 				else{
 					clear_screen();

@@ -40,7 +40,7 @@ unsigned char Input::keyboard() {
 			}
 			else return ESC;
 		}
-		else if(c == UP || c == RIGHT || c == DOWN || c == LEFT || c == ENT) return c;
+		else if(c == UP || c == RIGHT || c == DOWN || c == LEFT || c == ENT || c == SPACE) return c;
 		else if(c == '/') {
 			printf("\033[s");
 			unsigned char s[15];

@@ -8,6 +8,7 @@
 #define SAVE 1
 #define QUIT 0
 #define ENT 10
+#define SPACE 32
 #define window_width 121 // \brief La largeur maximale de la map (la longueur des lignes du fichier texte qui represente la map)
 #define window_height 21 // \brief La hauteur maximale de la map (le nombre des lignes du fichier texte qui represente la map)
 #define map_width 40 // \brief La largeur du segment qui sera affiché sur l'ecran

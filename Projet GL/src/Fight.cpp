@@ -46,7 +46,7 @@ using namespace std;
 			if(tour){
 				c = keyboard();
 				switch (c) {
-					case ENT:
+					case SPACE:
 							displayAttack({window_height/2,1},{window_height/2,segment_width-1},"->");
 							monstre.takeDamage(1);
 							InitialisationBattleDisplay();

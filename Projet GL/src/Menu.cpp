@@ -10,7 +10,7 @@ Menu::Menu() : Input(){
   maps = new string[nbMaps];
   int i = 0 ;
    while (i<10 && (drnt=readdir(dr)) !=NULL){ // je parcours le dossier fichier par fichier
-     if(strcmp(drnt->d_name,".") != 0 && strcmp(drnt->d_name,"..") != 0){
+     if(strcmp(drnt->d_name,".") != 0 && strcmp(drnt->d_name,"..") != 0 && strcmp(drnt->d_name,"terrainDesCombats.txt") !=0){
        maps[i] = drnt->d_name; // je récupère les noms des fichiers
        i++;
      }
