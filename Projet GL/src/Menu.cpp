@@ -38,23 +38,48 @@ Menu::~Menu(){
 }
 void Menu::menuPrincipal(){
   char c ;
+  int colonne ;
+  int ligne ;
   do{
+    colonne = getTermSize().y / 2 - 5 ;
+    ligne = 2;
     if(jouer){
       clear_screen();
+      setCursorPosition(ligne,colonne);
       color.setColorText("Jouer\n",'R');
+
+      ligne+=2;
+      setCursorPosition(ligne,colonne);
       std::cout << "Charger" << '\n';
+
+      ligne+=2;
+      setCursorPosition(ligne,colonne);
       std::cout << "Quitter" << '\n';
     }
     else if(charger){
       clear_screen();
+      setCursorPosition(ligne,colonne);
       std::cout << "Jouer" << '\n';
+
+      ligne+=2;
+      setCursorPosition(ligne,colonne);
       color.setColorText("Charger\n",'R');
+
+      ligne+=2;
+      setCursorPosition(ligne,colonne);
       std::cout << "Quitter" << '\n';
     }
     else{
       clear_screen();
+      setCursorPosition(ligne,colonne);
       std::cout << "Jouer" << '\n';
+
+      ligne+=2;
+      setCursorPosition(ligne,colonne);
       std::cout << "Charger" << '\n';
+
+      ligne+=2;
+      setCursorPosition(ligne,colonne);
       color.setColorText("Quitter\n",'R');
     }
     c = keyboard();
@@ -94,10 +119,19 @@ void Menu::parametresJeu(){
   int indMap = 0;
   int indJoueur = 0 ;
   int choix = 0 ;
+  unsigned width_colomn = 0;
   char c ;
   bool continuer = true;
+  for(int i = 0 ; i < nbJoueurs ; i++){
+    if(joueurs[i][0].length() > width_colomn)
+     width_colomn = joueurs[i][0].length() ;
+   }
+   width_colomn++;
+   int posCursorColomn;
+
   while(continuer){
 
+    color.setColorText("Choisir une map\n",'V');
    for (int i = 0 ; i < nbMaps ; i++){
      if(indMap == i){
       color.setColorText(maps[i]+"    ",'R');
@@ -109,47 +143,75 @@ void Menu::parametresJeu(){
 
    std::cout << '\n'<< '\n'<< '\n'<< '\n'<< '\n';
 
-     for(int i = 0 ; i < nbJoueurs ; i++){
-       if(choix == 1 && indJoueur == i){
-        color.setColorText(joueurs[i][0]+"  ",'R');
-       }
-       else{
-           std::cout << joueurs[i][0] << "  ";
-       }
-       std::cout << " | ";
-     }
-     std::cout << '\n';
+   color.setColorText("Choisir un personnage\n",'V');
 
-     for(int i = 0 ; i < nbJoueurs ; i++){
+    Cord position = getCursorPosition();
+    posCursorColomn = 0;
+    for(int i = 0 ; i < nbJoueurs ; i++){
        if(choix == 1 && indJoueur == i){
-        color.setColorText(joueurs[i][1]+"  ",'R');
+        color.setColorText(joueurs[i][0],'R');
        }
        else{
-           std::cout <<joueurs[i][1] << "  ";
+           std::cout << joueurs[i][0] ;
        }
+       posCursorColomn+= width_colomn ;
+       if (i != 0)
+        posCursorColomn+= 2 ;
+       setCursorPosition(position.x , posCursorColomn);
        std::cout << " | ";
      }
      std::cout << '\n';
+     position.x++;
+
+     posCursorColomn = 0;
      for(int i = 0 ; i < nbJoueurs ; i++){
        if(choix == 1 && indJoueur == i){
-        color.setColorText(joueurs[i][2]+"  ",'R');
+        color.setColorText(joueurs[i][1],'R');
        }
        else{
-           std::cout << joueurs[i][2] << "  ";
+           std::cout <<joueurs[i][1] ;
        }
+       posCursorColomn+= width_colomn ;
+       if (i != 0)
+        posCursorColomn+= 2 ;
+        setCursorPosition(position.x , posCursorColomn);
        std::cout << " | ";
      }
      std::cout << '\n';
+     position.x++;
+
+     posCursorColomn = 0;
      for(int i = 0 ; i < nbJoueurs ; i++){
        if(choix == 1 && indJoueur == i){
-        color.setColorText(joueurs[i][3]+"  ",'R');
+        color.setColorText(joueurs[i][2],'R');
        }
        else{
-           std::cout << joueurs[i][3] << "  ";
+           std::cout << joueurs[i][2];
        }
+       posCursorColomn+= width_colomn ;
+       if (i != 0)
+        posCursorColomn+= 2 ;
+        setCursorPosition(position.x , posCursorColomn);
        std::cout << " | ";
      }
      std::cout << '\n';
+     position.x++;
+
+     posCursorColomn = 0;
+     for(int i = 0 ; i < nbJoueurs ; i++){
+       if(choix == 1 && indJoueur == i){
+        color.setColorText(joueurs[i][3],'R');
+       }
+       else{
+           std::cout << joueurs[i][3] ;
+       }
+       posCursorColomn+= width_colomn ;
+       if (i != 0)
+        posCursorColomn+= 2 ;
+        setCursorPosition(position.x , posCursorColomn);
+       std::cout << " | ";
+     }
+     position.x-= 3 ;
 
    c = keyboard();
 
