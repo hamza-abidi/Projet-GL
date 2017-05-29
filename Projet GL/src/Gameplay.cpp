@@ -36,11 +36,12 @@ void Gameplay::play() {
 	char moving = 'A';
 	Colors color;
 	map->display(player);
-	cout << "\033["<<player.x+1<<";"<<player.y+1<<"H";
+	setCursorPosition(player.x+1,player.y+1);
 	char c ;
 	int radar;
 	Cord cur ;
 	while(true) {
+
 		c = keyboard();
 		if(c == UP) {
 			moving = 'A';

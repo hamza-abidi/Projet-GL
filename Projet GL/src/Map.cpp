@@ -7,6 +7,9 @@ using namespace std ;
 Map::Map(string nameMap , bool widthMonsters) : Colors(){
   map = nameMap ;
   int r = 50;
+
+  // Initialisation du curseur de Map
+  cursor = new Input() ;
   srand(time(0));
   beginIndex = monstersNumber = 0;
   matrixMap = new Case*[window_height];
@@ -38,9 +41,9 @@ Map::~Map(){
 int Map::move(Cord cord , char moving ){
   if((cord.y - beginIndex) == segment_width && matrixMap[cord.x][cord.y+1].c != 'e' && matrixMap[cord.x][cord.y].c != 'a'){
     beginIndex += segment_width ;
-    cout << "\033[0;0H";
+    cursor->setCursorPosition(0,0);
     display(cord);
-    cout << "\033["<<cord.x+1<<";"<<0<<"H";
+    cursor->setCursorPosition(cord.x+1,0);
     if(matrixMap[cord.x][cord.y].monster)
       return MONSTER ;
     else
@@ -52,25 +55,35 @@ int Map::move(Cord cord , char moving ){
       bool changeMap = false;
       if(cord.y < beginIndex && beginIndex != 0){
         beginIndex -= segment_width ;
-        cout << "\033[0;0H";
+        cursor->setCursorPosition(0,0);
         display(cord);
-        cout << "\033["<<cord.x+1<<";"<<segment_width<<"H";
+        cursor->setCursorPosition(cord.x+1,segment_width);
         changeMap = true;
-      }if(changeMap == false){
-      switch (moving) {
-        case 'A': cout << "\033[A" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[B" ;break;
-        case 'B': cout << "\033[B" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[A" ;break;
-        case 'C': cout << "\033[C" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[D" ;break;
-        case 'D': cout << "\033[D" ;displayColor("T",'V');cout << "\033[D" ;cout << "\033[C" ;break;
       }
+      if(changeMap == false){
+        Cord position = cursor->getCursorPosition() , newPosition;
+        switch (moving) {
+          case 'A': cursor->setCursorPosition(position.x-1,position.y);displayColor("T",'V');
+                    cursor->setCursorPosition(position);
+                    newPosition.x = position.x-1; newPosition.y = position.y;
+                    break;
+          case 'B': cursor->setCursorPosition(position.x+1,position.y);displayColor("T",'V');
+                    cursor->setCursorPosition(position);
+                    newPosition.x = position.x+1; newPosition.y = position.y;
+                    break;
+          case 'C': cursor->setCursorPosition(position.x,position.y+1) ;displayColor("T",'V');
+                    cursor->setCursorPosition(position);
+                    newPosition.x = position.x; newPosition.y = position.y+1;
+                    break;
+          case 'D': cursor->setCursorPosition(position.x,position.y-1);displayColor("T",'V');
+                    cursor->setCursorPosition(position);
+                    newPosition.x = position.x; newPosition.y = position.y-1;
+                    break;
+        }
 
-        displayColor(" ",'V');cout << "\033[D" ;
-      switch (moving) {
-        case 'A': cout << "\033[A" ;break;
-        case 'B': cout << "\033[B" ;break;
-        case 'C': cout << "\033[C" ;break;
-        case 'D': cout << "\033[D" ;break;
-      }
+        displayColor(" ",'V');
+        cursor->setCursorPosition(newPosition);
+
     }
       if(matrixMap[cord.x][cord.y].monster)
         return MONSTER ;

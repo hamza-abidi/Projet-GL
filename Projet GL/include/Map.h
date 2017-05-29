@@ -18,10 +18,11 @@
 #include <iostream>
 #include <time.h>
 #include "ManageFile.h"
+#include "Input.h"
 
 #define window_width 121 // \brief La largeur maximale de la map (la longueur des lignes du fichier texte qui represente la map)
 #define window_height 21 // \brief La hauteur maximale de la map (le nombre des lignes du fichier texte qui represente la map)
-#define segment_width 40 // \brief La largeur du segment qui sera affiché sur l'ecran
+#define segment_width 60 // \brief La largeur du segment qui sera affiché sur l'ecran
 
 
 
@@ -58,6 +59,7 @@ class Map : public Colors  {
     string map;
     int monstersNumber ;
     int beginIndex;
+    Input* cursor ;
     typedef struct Case{
       char c;
       bool monster ;
