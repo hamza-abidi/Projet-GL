@@ -1,5 +1,224 @@
 #include "../include/Input.h"
 #include <stdio.h>
+
+#if defined(_WIN32) || defined(_WIN64)
+
+Input::Input() {
+	rhnd = GetStdHandle(STD_INPUT_HANDLE);  // handle to read console
+	DWORD Events = 0;     // Event count
+	DWORD EventsRead = 0; // Events read from console
+	
+	getTermSize();
+}
+
+Input::~Input() {
+}
+
+void Input::updateTermSize() {
+	COORD c = GetLargestConsoleWindowSize
+	TermSize.x = c.x;
+	TermSize.y = c.y;
+}
+
+unsigned char Input::keyboard() {
+	for(;;) {
+		// gets the systems current "event" count
+		GetNumberOfConsoleInputEvents(rhnd, &Events);
+		
+		if(Events != 0) { // if something happened we will handle the events we want
+			
+			// create event buffer the size of how many Events
+			INPUT_RECORD eventBuffer[Events];
+			
+			// fills the event buffer with the events and saves count in EventsRead
+			ReadConsoleInput(rhnd, eventBuffer, Events, &EventsRead);
+			
+			// loop through the event buffer using the saved count
+			for(DWORD i = 0; i < EventsRead; ++i) {
+				switch (eventBuffer[i].Event.KeyEvent.wVirtualKeyCode) {
+					case VK_UP:
+					case UP:
+						return UP;
+					break;
+					case VK_DOWN:
+					case DOWN:
+						return DOWN;
+					break;
+					case VK_RIGHT:
+					case RIGHT:
+						return RIGHT;
+					break;
+					case VK_LEFT:
+					case LEFT:
+						return LEFT;
+					break;
+				}
+			}
+		}
+	}
+}
+
+Cord Input::getCursorPosition() {
+		CONSOLE_SCREEN_BUFFER_INFO csbi;
+		Cord c;
+		
+		if(GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi)) {
+			c.x = csbi.dwCursorPosition.X;
+			c.y = csbi.dwCursorPosition.Y;
+		}
+		else {
+			c.x = 0;
+			c.y = 0;
+		}
+		return c;
+}
+
+void Input::setCursorPosition(Cord position) {
+	COORD c;
+	c.X = position.x;
+	c.Y = position.y;
+	SetConsoleCursorPosition(rhnd, c);
+}
+
+void Input::setCursorPosition(int x, int y) {
+	COORD c = {x, y};
+	SetConsoleCursorPosition(rhnd, c);
+}
+
+int Input::inInt(){
+	bool negative = false;
+	int i = 0;
+	int a =  0;
+	Cord c;
+
+	for(;;) {
+		GetNumberOfConsoleInputEvents(rhnd, &Events);
+		if(Events != 0) {
+			INPUT_RECORD eventBuffer[Events];
+			ReadConsoleInput(rhnd, eventBuffer, Events, &EventsRead);
+			for(DWORD i = 0; i < EventsRead; ++i) {
+				if(i == 0 && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode == 109) {
+					negative = true;
+					printf("-");
+					i++;
+				}
+				else if(a < 999999 && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= '0' && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= '9') {
+					a = a*10 + (eventBuffer[i].Event.KeyEvent.wVirtualKeyCode -'0');
+					printf("%c", eventBuffer[i].Event.KeyEvent.wVirtualKeyCode);
+					i++;
+				}
+				else if(a < 999999 && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= 96 && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= 105) {
+					eventBuffer[i].Event.KeyEvent.wVirtualKeyCode -= 96;
+					a = a*10 + eventBuffer[i].Event.KeyEvent.wVirtualKeyCode;
+					printf("%d", eventBuffer[i].Event.KeyEvent.wVirtualKeyCode);
+				}
+				else if(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode == 8 && i >0) {
+					if(i > 1 || negative == false) {
+						a /= 10;
+					}
+					else {
+						negative = false;
+					}
+					c = getCursorPosition();
+					setCursorPosition(c.x, c.y-1);
+					printf(" ");
+					setCursorPosition(c.x, c.y-1);
+					i--;
+				}
+				else if(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode == ENT) {
+					return a;
+				}
+			}
+		}
+	}
+}
+
+std::string Input::inString(int l) {
+	int i = 0;
+	std::string s;
+	
+	for(;;) {
+		GetNumberOfConsoleInputEvents(rhnd, &Events);
+		if(Events != 0) {
+			INPUT_RECORD eventBuffer[Events];
+			ReadConsoleInput(rhnd, eventBuffer, Events, &EventsRead);
+			for(DWORD i = 0; i < EventsRead; ++i) {
+				if(i < l && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= 'A' && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= 'Z') {
+					printf("%c", eventBuffer[i].Event.KeyEvent.wVirtualKeyCode);
+					s.push_back(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode);
+					i++;
+				}
+				else if(i < l && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= '0' && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= '9') {
+					printf("%c",c);
+					s.push_back(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode);
+					i++;
+				}
+				else if(i < l && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= 96 && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= 105) {
+					eventBuffer[i].Event.KeyEvent.wVirtualKeyCode -= 48;
+					printf("%c",c);
+					s.push_back(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode);
+					i++;
+				}
+				else if(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode == 8 && i >0) {
+					c = getCursorPosition();
+					setCursorPosition(c.x, c.y-1);
+					printf(" ");
+					setCursorPosition(c.x, c.y-1);
+					i--;
+					s.resize(i);
+				}
+				else if(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode == ENT) {
+					return s;
+				}
+			}
+		}
+	}
+}
+
+std::string Input::inString() {
+	int i = 0;
+	std::string s;
+	
+	for(;;) {
+		GetNumberOfConsoleInputEvents(rhnd, &Events);
+		if(Events != 0) {
+			INPUT_RECORD eventBuffer[Events];
+			ReadConsoleInput(rhnd, eventBuffer, Events, &EventsRead);
+			for(DWORD i = 0; i < EventsRead; ++i) {
+				if(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= 'A' && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= 'Z') {
+					printf("%c", eventBuffer[i].Event.KeyEvent.wVirtualKeyCode);
+					s.push_back(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode);
+					i++;
+				}
+				else if(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= '0' && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= '9') {
+					printf("%c",c);
+					s.push_back(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode);
+					i++;
+				}
+				else if(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= 96 && eventBuffer[i].Event.KeyEvent.wVirtualKeyCode >= 105) {
+					eventBuffer[i].Event.KeyEvent.wVirtualKeyCode -= 48;
+					printf("%c",c);
+					s.push_back(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode);
+					i++;
+				}
+				else if(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode == 8 && i >0) {
+					c = getCursorPosition();
+					setCursorPosition(c.x, c.y-1);
+					printf(" ");
+					setCursorPosition(c.x, c.y-1);
+					i--;
+					s.resize(i);
+				}
+				else if(eventBuffer[i].Event.KeyEvent.wVirtualKeyCode == ENT) {
+					return s;
+				}
+			}
+		}
+	}
+}
+
+#elif defined(__unix__) || defined(__unix)
+#include <stdio.h>
 #include <unistd.h>
 
 Input::Input() {
@@ -10,15 +229,25 @@ Input::Input() {
 	new_tio = *old_tio;
 	new_tio.c_lflag &=(~ICANON & ~ECHO);
 	tcsetattr(STDIN_FILENO,TCSANOW,&new_tio);
+	
+	getTermSize();
 }
 
 Input::~Input() {
 	tcsetattr(STDIN_FILENO,TCSANOW,old_tio);
 }
 
+void Input::updateTermSize() {
+	printf("\033[s");
+	printf("\033[999;999H");
+	TermSize = getCursorPosition();
+	printf("\033[u");
+}
+
+
 unsigned char Input::keyboard() {
 	unsigned char c;
-	do {
+	for(;;) {
 		c = getchar();
 		if(c == 27) {
 			if(getchar() == 91) {
@@ -66,7 +295,7 @@ unsigned char Input::keyboard() {
 			if(s[0] == 'q')
 				return QUIT;
 		}
-	} while(true);
+	}
 }
 
 Cord Input::getCursorPosition() {
@@ -95,18 +324,6 @@ void Input::setCursorPosition(Cord position) {
 
 void Input::setCursorPosition(int x, int y) {
 	printf("\033[%d;%dH", x, y);
-}
-
-void Input::printCord(Cord cord) {
-	printf("x:%d y:%d", cord.x, cord.y);
-}
-Cord Input::getTermSize() {
-	Cord size;
-	printf("\033[s");
-	printf("\033[999;999H");
-	size = getCursorPosition();
-	printf("\033[u");
-	return size;
 }
 
 int Input::inInt(){
@@ -183,3 +400,13 @@ std::string Input::inString() {
 	}
 	return s;
 }
+
+
+#else
+#   error unsupported platform
+#endif
+
+Cord Input::getTermSize() {
+	return TermSize;
+}
+
