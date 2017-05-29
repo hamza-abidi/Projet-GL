@@ -218,7 +218,6 @@ std::string Input::inString() {
 }
 
 #elif defined(__unix__) || defined(__unix)
-#include <stdio.h>
 #include <unistd.h>
 
 Input::Input() {
