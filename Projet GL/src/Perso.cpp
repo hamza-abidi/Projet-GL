@@ -409,11 +409,7 @@ void Perso::displayClasse()
 
 int Perso::displaySkill()
 {
-/*	for (int i=0; i<4; i++)
-	{
-		cout<<"skill "<<i<<" : damage : "<< getSkillDam(i)<<" mana cost : "<<getSkillCost(i)<<endl;
-	}
-*/
+
 
 	bool tab [4];
 	tab[0]=1;

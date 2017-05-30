@@ -44,7 +44,7 @@ Map::~Map(){
 }
 
 int Map::move(Cord cord , char moving ){
-  if((cord.y - beginIndex) == segment_width && matrixMap[cord.x][cord.y+1].c != 'e' && matrixMap[cord.x][cord.y].c != 'a'){
+  if(cord.y != window_width-1 && (cord.y - beginIndex) == segment_width && matrixMap[cord.x][cord.y+1].c != 'e' && matrixMap[cord.x][cord.y].c != 'a' ){
     beginIndex += segment_width ;
     cursor->setCursorPosition(1,1);
     display(cord);
@@ -55,7 +55,7 @@ int Map::move(Cord cord , char moving ){
       return MOVE;
 
   }
-  else if(cord.y < window_width && cord.x < window_height && cord.y >= 0 && cord.x >= 0){
+  else if(cord.y < window_width-1 && cord.x < window_height && cord.y >= 0 && cord.x >= 0){
     if(matrixMap[cord.x][cord.y].c != 'e' && matrixMap[cord.x][cord.y].c != 'a' ){
       bool changeMap = false;
       if(cord.y < beginIndex && beginIndex != 0){
@@ -67,26 +67,21 @@ int Map::move(Cord cord , char moving ){
       }
       if(changeMap == false){
         Cord position = cursor->getCursorPosition() , newPosition;
+        displayColor(" ",'V');
         switch (moving) {
           case 'A': cursor->setCursorPosition(position.x-1,position.y);displayColor("T",'V');
-                    cursor->setCursorPosition(position);
                     newPosition.x = position.x-1; newPosition.y = position.y;
                     break;
           case 'B': cursor->setCursorPosition(position.x+1,position.y);displayColor("T",'V');
-                    cursor->setCursorPosition(position);
                     newPosition.x = position.x+1; newPosition.y = position.y;
                     break;
           case 'C': cursor->setCursorPosition(position.x,position.y+1) ;displayColor("T",'V');
-                    cursor->setCursorPosition(position);
                     newPosition.x = position.x; newPosition.y = position.y+1;
                     break;
           case 'D': cursor->setCursorPosition(position.x,position.y-1);displayColor("T",'V');
-                    cursor->setCursorPosition(position);
                     newPosition.x = position.x; newPosition.y = position.y-1;
                     break;
         }
-
-        displayColor(" ",'V');
         cursor->setCursorPosition(newPosition);
 
     }
