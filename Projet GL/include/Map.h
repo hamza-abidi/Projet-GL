@@ -29,9 +29,21 @@
 /// \class Map
 /// \bried La classe Map herite la classe Colors
 class Map : public Colors  {
-  public :
+  private:
+    string map;
+    int monstersNumber ;
+    int beginIndex;
+    Input* cursor ;
+    typedef struct Case{
+      char c;
+      bool monster ;
+    }Case ;
+
+    Case** matrixMap ;
+
+  public:
     /// \brief initialiser la map avec un le nom d'un fichier texte qui contient les éléments de la map
-    Map(string map,bool = true);
+    Map(string map,bool = true , bool = false);
 
     /// \brief Désallocation de la memoire
     ~Map();
@@ -41,6 +53,8 @@ class Map : public Colors  {
 
     /// \brief afficher la map
     void display(Cord = {-1,-1});
+
+    void display(Case**,int);
 
     /// \brief récuperer la largeur de la map
     int getWidth();
@@ -55,16 +69,8 @@ class Map : public Colors  {
     bool accessible(Cord);
 
     void monsterDied(Cord);
-  private:
-    string map;
-    int monstersNumber ;
-    int beginIndex;
-    Input* cursor ;
-    typedef struct Case{
-      char c;
-      bool monster ;
-    }Case ;
 
-    Case** matrixMap ;
+    void creerMap();
+
 };
 #endif

@@ -10,8 +10,8 @@ Gameplay::Gameplay() : Input() {
 	}while(map->accessible(player) == false);
 }
 
-Gameplay::Gameplay(string nameMap , int indJoueur) : Input() {
-	map = new Map(nameMap);
+Gameplay::Gameplay(string nameMap , int indJoueur,bool creationMap) : Input() {
+	map = new Map(nameMap,true,creationMap);
 	joueur = new Perso(indJoueur,false);
 
 	ManageFile file("../personnages/monstres.txt","r");
@@ -52,13 +52,13 @@ void Gameplay::play() {
 				cur = getCursorPosition();
 				if(fight->startBattle()){
 					map->monsterDied(player);
-					setCursorPosition({0,0});
+					setCursorPosition({1,1});
 					map->display(player);
 					setCursorPosition(cur);
 				}
 				else{
 					clear_screen();
-					setCursorPosition({0,0});
+					setCursorPosition({1,1});
 					color.setColorText("Vous etes mort",'R');
 					exit(1);
 				}
@@ -73,13 +73,13 @@ void Gameplay::play() {
 				cur = getCursorPosition();
 				if(fight->startBattle()){
 					map->monsterDied(player);
-					setCursorPosition({0,0});
+					setCursorPosition({1,1});
 					map->display(player);
 					setCursorPosition(cur);
 				}
 				else{
 					clear_screen();
-					setCursorPosition({0,0});
+					setCursorPosition({1,1});
 					color.setColorText("Vous etes mort",'R');
 					exit(1);
 				}
@@ -94,13 +94,13 @@ void Gameplay::play() {
 				cur = getCursorPosition();
 				if(fight->startBattle()){
 					map->monsterDied(player);
-					setCursorPosition({0,0});
+					setCursorPosition({1,1});
 					map->display(player);
 					setCursorPosition(cur);
 				}
 				else{
 					clear_screen();
-					setCursorPosition({0,0});
+					setCursorPosition({1,1});
 					color.setColorText("Vous etes mort",'R');
 					exit(1);
 				}
@@ -115,13 +115,13 @@ void Gameplay::play() {
 				cur = getCursorPosition();
 				if(fight->startBattle()){
 					map->monsterDied(player);
-					setCursorPosition({0,0});
+					setCursorPosition({1,1});
 					map->display(player);
 					setCursorPosition(cur);
 				}
 				else{
 					clear_screen();
-					setCursorPosition({0,0});
+					setCursorPosition({1,1});
 					color.setColorText("Vous etes mort",'R');
 					exit(1);
 				}

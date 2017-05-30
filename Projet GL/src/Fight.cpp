@@ -34,12 +34,12 @@ using namespace std;
 		int indMonstre = rand()%nbMonstres;
 		monstre = monstres[indMonstre]; // on choisi un monstre aléatoirement
 
-		setCursorPosition({0,0});
+		setCursorPosition({1,1});
 		joueur.regenFullPv();
 		joueur.regenFullMana();
 		terrain->display();
 		InitialisationBattleDisplay();
-		
+
 		bool tour = true; // true : le joueur qui attaque , false le monstre qu'il attaque
 		char c ;
 		while(monstre.getPv() != 0 && joueur.getPv() != 0 ){

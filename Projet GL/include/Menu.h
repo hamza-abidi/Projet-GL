@@ -17,6 +17,7 @@ class Menu : Input{
     ~Menu();
     void menuPrincipal();
     void parametresJeu();
+    string MenuCreationMap();
     void sauvgarde();
   private:
     Colors color;

@@ -7,7 +7,7 @@ Menu::Menu() : Input(){
   dr=opendir("../maps/"); // j'accède au dossier
   struct dirent* drnt ; // je enregistre son contenu dans le tableau de dirent drnt (structure)
   nbMaps = 10 ;
-  maps = new string[nbMaps];
+  maps = new string[nbMaps+1];
   int i = 0 ;
    while (i<10 && (drnt=readdir(dr)) !=NULL){ // je parcours le dossier fichier par fichier
      if(strcmp(drnt->d_name,".") != 0 && strcmp(drnt->d_name,"..") != 0 && strcmp(drnt->d_name,"terrainDesCombats.txt") !=0){
@@ -16,7 +16,8 @@ Menu::Menu() : Input(){
      }
 
   }
-  nbMaps = i;
+  maps[i] = "Construire une map";
+  nbMaps = i+1;
   closedir(dr);
 
   ManageFile* file = new ManageFile("../personnages/personnages.txt","r");
@@ -240,10 +241,18 @@ void Menu::parametresJeu(){
   }
   clear_screen();
  }
+ string newMapName ;
  map = indMap ;
  personnage = indJoueur;
- Gameplay gameplay("../maps/"+maps[map],indJoueur);
- gameplay.play();
+ if(indMap == nbMaps-1){
+   newMapName = MenuCreationMap();
+   Gameplay gameplay("../maps/"+newMapName,indJoueur,true);
+   gameplay.play();
+ }
+ else{
+  Gameplay gameplay("../maps/"+maps[map],indJoueur);
+  gameplay.play();
+ }
 }
 
 void Menu::sauvgarde(){
@@ -252,4 +261,26 @@ void Menu::sauvgarde(){
 
   // for (int i = 0 ; i < nbJoueurs ; i++)
   //   std::cout << joueurs[i][0] << '\n';
+}
+
+string Menu::MenuCreationMap(){
+  Colors color ;
+  string mapName ;
+  bool v = false ;
+  do{
+    clear_screen();
+    setCursorPosition(1,1);
+    color.setColorText("Nom de la nouvelle map\n",'V');
+    mapName = inString();
+    v = false;
+    DIR *dr;
+    dr=opendir("../maps/"); // j'accède au dossier
+    struct dirent* drnt ; // je enregistre son contenu dans le tableau de dirent drnt (structure)
+     while ((drnt=readdir(dr)) !=NULL){ // je parcours le dossier fichier par fichier
+       if(strcmp(drnt->d_name,".") != 0 && strcmp(drnt->d_name,"..") != 0 && strcmp(drnt->d_name,"terrainDesCombats.txt") !=0 && strcmp(drnt->d_name,mapName.c_str()) == 0){
+         v = true;
+       }
+     }
+  }while(v == true);
+  return mapName ;
 }

@@ -15,6 +15,9 @@
 #define QUIT 0
 #define ENT 13
 #define SPACE 32
+#define E 'E'
+#define A 'A'
+#define H 'H'
 
 #include <windows.h> // \brief Windows API permettant de controler la console
 
@@ -33,7 +36,7 @@ class Input {
 		std::string inString();
 	private:
 		Cord TermSize;
-		
+
 		HANDLE rhnd;
 		DWORD Events;
 		DWORD EventsRead;
@@ -50,6 +53,9 @@ class Input {
 #define QUIT 0
 #define ENT 10
 #define SPACE 32
+#define E 'e'
+#define A 'a'
+#define H 'h'
 
 #include <termios.h>
 
@@ -68,7 +74,7 @@ class Input {
 		std::string inString();
 	private:
 		Cord TermSize;
-		
+
 		struct termios* old_tio;
 };
 

@@ -7,8 +7,8 @@ Input::Input() {
 	rhnd = GetStdHandle(STD_INPUT_HANDLE);  // handle to read console
 	DWORD Events = 0;     // Event count
 	DWORD EventsRead = 0; // Events read from console
-	
-	getTermSize();
+
+	updateTermSize();
 }
 
 Input::~Input() {
@@ -24,15 +24,15 @@ unsigned char Input::keyboard() {
 	for(;;) {
 		// gets the systems current "event" count
 		GetNumberOfConsoleInputEvents(rhnd, &Events);
-		
+
 		if(Events != 0) { // if something happened we will handle the events we want
-			
+
 			// create event buffer the size of how many Events
 			INPUT_RECORD eventBuffer[Events];
-			
+
 			// fills the event buffer with the events and saves count in EventsRead
 			ReadConsoleInput(rhnd, eventBuffer, Events, &EventsRead);
-			
+
 			// loop through the event buffer using the saved count
 			for(DWORD i = 0; i < EventsRead; ++i) {
 				switch (eventBuffer[i].Event.KeyEvent.wVirtualKeyCode) {
@@ -61,7 +61,7 @@ unsigned char Input::keyboard() {
 Cord Input::getCursorPosition() {
 		CONSOLE_SCREEN_BUFFER_INFO csbi;
 		Cord c;
-		
+
 		if(GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi)) {
 			c.x = csbi.dwCursorPosition.X;
 			c.y = csbi.dwCursorPosition.Y;
@@ -136,7 +136,7 @@ int Input::inInt(){
 std::string Input::inString(int l) {
 	int i = 0;
 	std::string s;
-	
+
 	for(;;) {
 		GetNumberOfConsoleInputEvents(rhnd, &Events);
 		if(Events != 0) {
@@ -178,7 +178,7 @@ std::string Input::inString(int l) {
 std::string Input::inString() {
 	int i = 0;
 	std::string s;
-	
+
 	for(;;) {
 		GetNumberOfConsoleInputEvents(rhnd, &Events);
 		if(Events != 0) {
@@ -228,8 +228,8 @@ Input::Input() {
 	new_tio = *old_tio;
 	new_tio.c_lflag &=(~ICANON & ~ECHO);
 	tcsetattr(STDIN_FILENO,TCSANOW,&new_tio);
-	
-	getTermSize();
+
+	updateTermSize();
 }
 
 Input::~Input() {
@@ -268,7 +268,7 @@ unsigned char Input::keyboard() {
 			}
 			else return ESC;
 		}
-		else if(c == UP || c == RIGHT || c == DOWN || c == LEFT || c == ENT || c == SPACE) return c;
+		else if(c == UP || c == RIGHT || c == DOWN || c == LEFT || c == ENT || c == SPACE || c == E || c == H || c == A) return c;
 		else if(c == '/') {
 			printf("\033[s");
 			unsigned char s[15];
@@ -408,4 +408,3 @@ std::string Input::inString() {
 Cord Input::getTermSize() {
 	return TermSize;
 }
-

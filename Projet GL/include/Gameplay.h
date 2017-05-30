@@ -12,7 +12,7 @@
 class Gameplay  : Input{
 	public:
 		Gameplay();
-		Gameplay(string,int);
+		Gameplay(string,int,bool = false);
 		void play();
 	private:
 		Map* map;
